@@ -25,10 +25,11 @@
   * 枠ID. Zucks Ad Network担当者にご確認ください.
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は配信されません
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
-  * 現在未対応、将来的に対応予定です
+  * 現在未対応であり、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+    * 将来的に対応予定です
   * 追跡型広告を制限している場合には **送信しない** ようにしてください
 * ua: String, Optional.
-  * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+  * 標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
 * ref: String, Optional.
 * lang: Optional.
 
@@ -84,7 +85,7 @@ Response Bodyはありません。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&
+http://sh.zucks.net/opt/api/v1?frameid=_abcdef1234
 ```
 
 ### Response
