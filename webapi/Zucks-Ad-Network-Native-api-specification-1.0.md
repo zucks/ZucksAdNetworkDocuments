@@ -53,6 +53,8 @@ Zucks Ad Serverから、JSON文字列を返します。
 * type: String. `native`.
 * image_src: URL. Banner image src.
   * 画像は正方形サイズとなります。縦横比を保って表示してください。
+* width: Integer. 画像の横幅.
+* height: Integer. 画像の高さ.
 * landing_url: URL. 広告タップ時の遷移先URL.
 * text: String. 広告の本文.長さ1～28の文字列.
 * sub_text: String. 追加で表示可能なテキスト.長さ0～14の文字列.
@@ -81,6 +83,8 @@ Native ad:
     "status": "ok",
     "type": "native",
     "image_src": "http:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F2015\u002F01\u002F29\u002F162401_phphVPOnl.png",
+    "width": "114",
+    "height": "114",
     "imp_url": "http:\u002F\u002Fk.zucks.net\u002F...",
     "landing_url": "http:\u002F\u002Fk.zucks.net\u002F...",
     "text": "こちらはネイティブ広告の本文となります",
@@ -147,3 +151,107 @@ Zucks Ad Networkでは、ビーコン送信によりインプレッションを�
 - [ ] `landing_url` 値のURLにリクエストを発行していますか？
 - [ ] そのレスポンスは `302 Moved Temporarily` ですか？
 - [ ] 管理画面上のレポーティングには多少のタイムラグがあります。しばらく待ってみてください。
+
+
+## Multiple Api
+
+* End point: http://sh.zucks.net/opt/native/api/v1
+* Method: GET
+
+### Request Headers:
+
+* 前述のAPIの仕様に準じます.
+
+### Request Parameters:
+
+* ad_num: Integer: Optional
+  * APIに要求する広告の数.１～12の範囲で指定してください。
+  * 省略した場合、1つの広告を要求します。
+  * 1度に返却可能な要素数は最大で12個となります。
+* その他の項目は前述したAPIの仕様に準じます.
+
+### Response
+
+Zucks Ad Serverから、JSON文字列を返します。
+
+#### Response Header
+
+* HTTP status: 200 OK
+* Content-Type: application/json;charset=UTF-8
+
+#### Response Body
+
+* num: Integer.
+  * 取得に成功した広告の個数です。
+* ads: Array.
+  * 各要素は前述したAPIのResponse Body に準じたオブジェクトとなります。
+
+#### その他
+
+* リクエストされた個数未満の広告が返る可能性があります。
+
+### Example
+
+#### Request
+
+```
+http://sh.zucks.net/opt/native/api/v1?frameid=723&num=4&ida=xxxx-xxxx-xxxx-xxxx-xxxx
+```
+
+#### Response
+
+```json
+
+{"ad_num": 3, "ads":[
+    {
+        "status": "ok",
+        "type": "native",
+        "image_src": "http:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F2015\u002F01\u002F29\u002F162401_phphVPOnl.png",
+        "width": "114",
+        "height": "114",
+        "imp_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "landing_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "text": "こちらはネイティブ広告の本文となります",
+        "sub_text": "こちらは追加の文言です"
+    },
+    {
+        "status": "ok",
+        "type": "native",
+        "image_src": "http:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F2015\u002F01\u002F29\u002F162401_phphVPOnl.png",
+        "width": "114",
+        "height": "114",
+        "imp_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "landing_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "text": "複数取得のサンプルです",
+        "sub_text": "追加の文言"
+    },
+    {
+        "status": "ok",
+        "type": "native",
+        "image_src": "http:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F2015\u002F01\u002F29\u002F162401_phphVPOnl.png",
+        "width": "114",
+        "height": "114",
+        "imp_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "landing_url": "http:\u002F\u002Fk.zucks.net\u002F...",
+        "text": "複数取得のサンプル案件です",
+        "sub_text": "追加の文言です"
+    },
+    {
+        "status": "no_ad",
+        "imp_url": "http:\u002F\u002Fk.zucks.net\u002F..."
+    }]
+}
+
+```
+
+## Rendering the Ad
+
+各広告について、前述のAPIと同様の手順で表示してください。
+
+## Firing Impressions
+
+各広告について、前述のAPIと同様の手順でビーコンを送信してください。
+
+## Firing Clicks
+
+広告タップ時、`landing_url` のURLでデフォルトブラウザを開いてください。
