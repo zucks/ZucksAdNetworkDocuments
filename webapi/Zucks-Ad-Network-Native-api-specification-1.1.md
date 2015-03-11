@@ -71,7 +71,7 @@ Zucks Ad Serverから、JSON文字列を返します。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx
+http://sh.zucks.net/opt/native/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx
 ```
 
 ### Response
