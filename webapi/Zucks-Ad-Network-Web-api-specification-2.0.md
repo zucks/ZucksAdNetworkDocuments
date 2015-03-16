@@ -17,6 +17,8 @@
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
 * Accept-Language: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
+* Origin: Optional.
+  * `withCredentials` 属性を `true` にてリクエストする場合は設定してください
 * Cookie: Optional.
 
 ### Request Parameters:
@@ -25,11 +27,10 @@
   * 枠ID. Zucks Ad Network担当者にご確認ください.
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は配信されません
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
-  * 現在未対応であり、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
-    * 将来的に対応予定です
+  * 現在未対応、将来的に対応予定です
   * 追跡型広告を制限している場合には **送信しない** ようにしてください
 * ua: String, Optional.
-  * 標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+  * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
 * ref: String, Optional.
 * lang: Optional.
 
@@ -38,6 +39,7 @@
 
 * ブラウザ/WebView内からの XmlHttpRequest を使ってリクエストを送る場合:
   * `withCredentials` 属性を `true` にてリクエストしてください
+  * `Request Headers` の `Origin` を設定してください
 
 
 ## Response: 広告在庫がある場合
@@ -85,7 +87,7 @@ Response Bodyはありません。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=_abcdef1234
+http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&
 ```
 
 ### Response
@@ -149,7 +151,7 @@ Img ad, HTML adともに、広告領域をレンダリングした直後、 `imp
 広告バナータップ時、`landing_url` のURLでデフォルトブラウザを開いてください。
 
 > `landing_url` をリクエストすると、
-> 
+>
 > * クリックのカウント
 > * コンバージョン計測用のcookieを作成
 >

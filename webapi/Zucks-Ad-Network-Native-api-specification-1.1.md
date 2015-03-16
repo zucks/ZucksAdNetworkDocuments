@@ -15,6 +15,8 @@
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
 * Accept-Language: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
+* Origin: Optional.
+  * `withCredentials` 属性を `true` にてリクエストする場合は設定してください
 * Cookie: Optional.
 
 ### Request Parameters:
@@ -35,6 +37,7 @@
 
 * ブラウザ/WebView内からの XmlHttpRequest を使ってリクエストを送る場合:
   * `withCredentials` 属性を `true` にてリクエストしてください
+  * `Request Headers` の `Origin` を設定してください
 
 
 ## Response
