@@ -29,6 +29,7 @@
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
   * 現在未対応であり、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
     * 将来的に対応予定です
+  * 追跡型広告を制限している場合には **送信しない** ようにしてください
 * ua: String, Optional.
   * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
 * ref: String, Optional.
