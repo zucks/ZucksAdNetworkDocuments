@@ -23,9 +23,11 @@
 * frameid: Integer, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
-  * 現在未対応、将来的に対応予定です
-* lat: Limit Ad Tracking, Optional.
-  * 現在未対応、将来的に対応予定です
+  * ida パラメータを送信する場合、必ず、 lat パラメータを同時に送る必要があります。
+  * ida パラメータが指定されていて、lat パラメータがない場合、必ず HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+* lat: 0 or 1, Optional.
+  * 「広告トラッキング制限」が無効な場合: 0
+  * 「広告トラッキング制限」が有効な場合: 1
 * ua: String, Optional.
 * ref: String, Optional.
 * lang: Optional.
