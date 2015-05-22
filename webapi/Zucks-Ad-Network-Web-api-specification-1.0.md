@@ -24,11 +24,12 @@
   * 枠ID. Zucks Ad Network担当者にご確認ください.
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
   * 現在未対応、将来的に対応予定です
-  * 追跡型広告を制限している場合には **送信しない** ようにしてください
+* lat: Limit Ad Tracking, Optional.
+  * 現在未対応、将来的に対応予定です
 * ua: String, Optional.
 * ref: String, Optional.
 * lang: Optional.
-
+* ip: Source IP address, Optional
 
 ### その他
 
