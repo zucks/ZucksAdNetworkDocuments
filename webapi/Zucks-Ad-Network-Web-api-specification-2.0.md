@@ -35,7 +35,7 @@
   * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
 * ref: String, Optional.
 * lang: Optional.
-* ip: Optional.
+* ip: Source IP address, Optional.
 
 ### その他
 
