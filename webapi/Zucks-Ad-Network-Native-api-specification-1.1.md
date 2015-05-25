@@ -63,8 +63,7 @@ Zucks Ad Serverから、JSON文字列を返します。
 * height: Integer. 画像の高さ.
 * landing_url: URL. 広告タップ時の遷移先URL.
 * text: String. 広告の本文.長さ1～28の文字列.
-* sub_text: String. 追加で表示可能なテキスト.長さ0～14の文字列.
-
+* sub_text: String. 広告素材のタイトル.長さ0～14の文字列.
 
 #### status: no_ad
 
