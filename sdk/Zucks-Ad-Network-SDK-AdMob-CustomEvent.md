@@ -10,9 +10,11 @@ https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#cust
 
 ## 前提条件
 
-ZucksAdNetworkSDKが導入済みであること  
-Google Play Services(Android)が導入済みであること  
-Google-Mobile-Ads-SDK(iOS)が導入済みであること
+- ZucksAdNetworkSDKが導入済みであること
+    - [ZucksAdNetworkSDK導入手順(Android)](https://ms.zucksadnetwork.com/media/sdk/manual/android/)
+    - [ZucksAdNetworkSDK導入手順(iOS)](https://ms.zucksadnetwork.com/media/sdk/manual/ios/)
+- Google Play Services(Android)が導入済みであること
+- Google-Mobile-Ads-SDK(iOS)が導入済みであること
 
 本実装では広告クリック数はAdMob管理画面には反映されません  
 (インプレッション数は連携されます)
