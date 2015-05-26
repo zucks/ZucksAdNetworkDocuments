@@ -4,7 +4,7 @@ AdMobカスタムイベント導入手順</h1>
 本手順書はAdMob カスタムイベント導入ガイドと合わせてご参照ください
 
 AdMob カスタムイベント導入ガイド(Android)  
-https://developers.google.com/mobile-ads-sdk/docs/admob/android/custom-events?hl=ja
+https://developers.google.com/mobile-ads-sdk/docs/admob/android/custom-events?hl=ja  
 AdMob カスタムイベント導入ガイド(iOS)  
 https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#customevents
 
