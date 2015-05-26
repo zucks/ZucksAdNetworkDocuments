@@ -3,18 +3,18 @@ AdMobカスタムイベント導入手順</h1>
 
 本手順書はAdMob カスタムイベント導入ガイドと合わせてご参照ください
 
-AdMob カスタムイベント導入ガイド(Android)
+AdMob カスタムイベント導入ガイド(Android)  
 https://developers.google.com/mobile-ads-sdk/docs/admob/android/custom-events?hl=ja
-AdMob カスタムイベント導入ガイド(iOS)
+AdMob カスタムイベント導入ガイド(iOS)  
 https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#customevents
 
 ## 前提条件
 
-ZucksAdNetworkSDKが導入済みであること
-Google Play Services(Android)が導入済みであること
+ZucksAdNetworkSDKが導入済みであること  
+Google Play Services(Android)が導入済みであること  
 Google-Mobile-Ads-SDK(iOS)が導入済みであること
 
-本実装では広告クリック数はAdMob管理画面には反映されません
+本実装では広告クリック数はAdMob管理画面には反映されません  
 (インプレッション数は連携されます)
 
 ## ステップ 1: カスタム イベントを定義する
@@ -25,8 +25,8 @@ AdMob管理画面にてカスタムイベントを作成し、下記項目を設
 - Label : AdMob管理画面上のレポートに表示される名称。任意の名称を設定
 - Parameter : ZucksAdNetwork管理画面にて発行されるメディアIDを設定
 
-※ ClassNameについて:
-Android用のカスタムイベントの場合はクラス名をパッケージ名から指定します。
+※ ClassNameについて:  
+Android用のカスタムイベントの場合はクラス名をパッケージ名から指定します。  
 iOS用のカスタムイベントの場合はクラス名を指定します。
 
 有効CPMの値を配信したい比率に合わせて設定して下さい。
@@ -37,10 +37,10 @@ iOS用のカスタムイベントの場合はクラス名を指定します。
 
 ### Android
 
-CustomEventBannerまたはCustomEventInterstitialを実装するクラスを定義します。
+CustomEventBannerまたはCustomEventInterstitialを実装するクラスを定義します。  
 ステップ1のClass Nameで定義したクラス名と同一にしてください。
 
-各実装例を下記に示します。
+各実装例を下記に示します。  
 パッケージ名など必要に応じて変更してください。 
 
 <div style="page-break-before: always"></div> 
@@ -174,7 +174,7 @@ public class ZucksCustomEventInterstitial implements CustomEventInterstitial {
 
 ### iOS
 
-GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラスを定義します。
+GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラスを定義します。  
 ステップ1のClass Nameで定義したクラス名と同一にしてください。
 
 各実装例を下記に示します。
