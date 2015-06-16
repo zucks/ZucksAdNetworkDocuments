@@ -18,7 +18,7 @@
 
 ### 実装例
 
-``` javascript
+```html
 <script type="text/javascript”>
 zucksIdfa = {
   ida: "abcedfg",
