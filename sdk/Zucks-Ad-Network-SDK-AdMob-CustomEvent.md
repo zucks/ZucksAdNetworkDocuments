@@ -47,7 +47,7 @@ CustomEventBannerまたはCustomEventInterstitialを実装するクラスを定�
 
 <div style="page-break-before: always"></div> 
 
-### 実装例：バナー
+#### 実装例：バナー
 ```java
 package com.your.packagename.sample;
 
@@ -91,7 +91,7 @@ public class ZucksCustomEventBanner implements CustomEventBanner {
 ```
 <div style="page-break-before: always"></div>
 
-### 実装例：インタースティシャル
+#### 実装例：インタースティシャル
 ```java
 package com.your.packagename.sample;
 
@@ -181,7 +181,7 @@ GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラス�
 
 各実装例を下記に示します。
 
-### 実装例：バナー 
+#### 実装例：バナー
 ヘッダ部
 
 ```objective-c
@@ -218,7 +218,7 @@ GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラス�
 @end
 ```
 <div style="page-break-before: always"></div>
-### 実装例：インタースティシャル
+#### 実装例：インタースティシャル
 ヘッダ部
 
 ```objective-c
@@ -280,6 +280,17 @@ callbackValue:(NSInteger)callbackValue {
 }
 @end
 ```
+
+#### ARC非対応プロジェクトの場合
+
+上記実装例はARCを前提としております。
+ARC非対応のプロジェクトの場合にはXcode上で以下の設定を追加してください。
+
+対象ビルドtargetを選択し[Build Phases] → [Compile Sources]を開いてください。
+実装するカスタムイベントクラス
+(下記の例だとZACustomEventBannerおよびZACustomEventInterstitial)
+の[Compiler Flags]に[-fobjc-arc]を設定してください。
+上記設定を行う事により、対象クラスのみARC対象となり、正常にビルド可能になります。
 
 
 
