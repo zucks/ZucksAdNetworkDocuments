@@ -19,7 +19,7 @@
 ### 実装例
 
 ```html
-<script type="text/javascript”>
+<script type="text/javascript">
 zucksIdfa = {
   ida: "abcedfg",
   lat: 1
