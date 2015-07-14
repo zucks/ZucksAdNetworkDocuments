@@ -1,27 +1,41 @@
-<h1>ZucksAdNetworkSDK<br>
+<h1>Zucks Ad Network SDK<br>
 AdMobカスタムイベント導入手順</h1>
 
-本手順書はAdMob カスタムイベント導入ガイドと合わせてご参照ください
+本手順書はAdMob メディエーションにおいて、AdMob カスタムイベントを利用してZucks Ad Networkの広告を表示するためのものとなります  
+AdMob カスタムイベントの導入ガイドと合わせてご参照ください
 
 AdMob カスタムイベント導入ガイド(Android)  
 https://developers.google.com/mobile-ads-sdk/docs/admob/android/custom-events?hl=ja  
 AdMob カスタムイベント導入ガイド(iOS)  
 https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#customevents
 
-## 前提条件
-
-- ZucksAdNetworkSDKが導入済みであること
-    - [ZucksAdNetworkSDK導入手順(Android)](https://ms.zucksadnetwork.com/media/sdk/manual/android/)
-    - [ZucksAdNetworkSDK導入手順(iOS)](https://ms.zucksadnetwork.com/media/sdk/manual/ios/)
-- Google Play Services(Android)が導入済みであること
-- Google-Mobile-Ads-SDK(iOS)が導入済みであること
-
-本実装では広告クリック数はAdMob管理画面には反映されません  
+※本実装では広告クリック数はAdMob管理画面には反映されません  
 (インプレッション数は連携されます)
 
-## ステップ 1: カスタム イベントを定義する
+## 前提条件
 
-AdMob管理画面にてカスタムイベントを作成し、下記項目を設定して下さい。
+- AdMobのSDKをアプリに導入済みであること
+    - Android
+        - [Google Play Services](https://developers.google.com/mobile-ads-sdk/docs/admob/android/quick-start?hl=ja)
+    - iOS
+        - [Google Mobile Ads SDK](https://developers.google.com/mobile-ads-sdk/docs/admob/ios/quick-start?hl=ja)
+
+## ステップ 1: Zucks Ad Network SDKの導入
+
+### Android
+
+- [Zucks Ad Network Android用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/android/)
+    - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/android/#integrateSDK) 及び [パーミッションの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/#addPermission) を行ってください
+    - インタースティシャル広告の場合は、[インタースティシャル広告用Activityの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/#addInterstitialActivity) も行ってください
+
+### iOS
+
+- [Zucks Ad Network iOS用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/ios/)
+    - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/ios/#integrateSDK) を行ってください
+
+## ステップ 2: カスタム イベントを定義する
+
+AdMob管理画面にてカスタムイベントを作成し、下記項目を設定してください。
 
 - ClassName : カスタムイベント実装クラス名を設定
 - Label : AdMob管理画面上のレポートに表示される名称。任意の名称を設定
@@ -31,16 +45,16 @@ AdMob管理画面にてカスタムイベントを作成し、下記項目を設
 Android用のカスタムイベントの場合はクラス名をパッケージ名から指定します。  
 iOS用のカスタムイベントの場合はクラス名を指定します。
 
-有効CPMの値を配信したい比率に合わせて設定して下さい。
+有効CPMの値を配信したい比率に合わせて設定してください。
 
 <div style="page-break-before: always"></div>
 
-##ステップ 2: カスタムイベント実装クラスを定義する
+##ステップ 3: カスタムイベント実装クラスを定義する
 
 ### Android
 
 CustomEventBannerまたはCustomEventInterstitialを実装するクラスを定義します。  
-ステップ1のClass Nameで定義したクラス名と同一にしてください。
+ステップ2のClass Nameで定義したクラス名と同一にしてください。
 
 各実装例を下記に示します。  
 パッケージ名など必要に応じて変更してください。 
@@ -177,7 +191,7 @@ public class ZucksCustomEventInterstitial implements CustomEventInterstitial {
 ### iOS
 
 GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラスを定義します。  
-ステップ1のClass Nameで定義したクラス名と同一にしてください。
+ステップ2のClass Nameで定義したクラス名と同一にしてください。
 
 各実装例を下記に示します。
 
@@ -235,7 +249,6 @@ GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラス�
 
 ```objective-c
 #import "ZACustomEventInterstitial.h"
-#import "FluctInterstitialView.h"
 
 @interface ZACustomEventInterstitial ()
 @property(nonatomic) FluctInterstitialView *interstitialView;
@@ -283,14 +296,12 @@ callbackValue:(NSInteger)callbackValue {
 
 #### ARC非対応プロジェクトの場合
 
-上記実装例はARCを前提としております。
+上記実装例はARCを前提としております。  
 ARC非対応のプロジェクトの場合にはXcode上で以下の設定を追加してください。
 
-対象ビルドtargetを選択し[Build Phases] → [Compile Sources]を開いてください。
-実装するカスタムイベントクラス
-(下記の例だとZACustomEventBannerおよびZACustomEventInterstitial)
-の[Compiler Flags]に[-fobjc-arc]を設定してください。
+対象ビルドtargetを選択し[Build Phases] → [Compile Sources]を開いてください。  
+実装するカスタムイベントクラス  
+(上記の例だとZACustomEventBannerおよびZACustomEventInterstitial)  
+の[Compiler Flags]に[-fobjc-arc]を設定してください。  
 上記設定を行う事により、対象クラスのみARC対象となり、正常にビルド可能になります。
-
-
 
