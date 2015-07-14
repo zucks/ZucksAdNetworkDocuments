@@ -249,7 +249,6 @@ GADCustomEventBannerまたはGADCustomEventInterstitialを実装するクラス�
 
 ```objective-c
 #import "ZACustomEventInterstitial.h"
-#import "FluctInterstitialView.h"
 
 @interface ZACustomEventInterstitial ()
 @property(nonatomic) FluctInterstitialView *interstitialView;
