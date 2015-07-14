@@ -1,4 +1,4 @@
-<h1>ZucksAdNetworkSDK<br>
+<h1>Zucks Ad Network SDK<br>
 AdMobカスタムイベント導入手順</h1>
 
 本手順書はAdMob メディエーションにおいて、AdMob カスタムイベントを利用してZucks Ad Networkの広告を表示するためのものとなります  
@@ -24,14 +24,14 @@ https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#cust
 
 ### Android
 
-- [ZucksAdNetworkSDK導入手順(Android)](https://ms.zucksadnetwork.com/media/sdk/manual/android/)
-    - `1. プロジェクトへの導入`及び`3. 広告の表示設定`->`ⅰ. マニフェストの設定`->`パーミッションの追加`を行ってください
-    - インタースティシャル広告の場合は、`3. 広告の表示設定`->`ⅱ-b. インタースティシャル広告`->`インタースティシャル広告用Activityの追加`も行ってください
+- [Zucks Ad Network Android用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/android/)
+    - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/android/#integrateSDK) 及び [パーミッションの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/#addPermission) を行ってください
+    - インタースティシャル広告の場合は、[インタースティシャル広告用Activityの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/#addInterstitialActivity) も行ってください
 
 ### iOS
 
-- [ZucksAdNetworkSDK導入手順(iOS)](https://ms.zucksadnetwork.com/media/sdk/manual/ios/)
-    - `1. プロジェクトへの導入` を行ってください
+- [Zucks Ad Network iOS用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/ios/)
+    - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/ios/#integrateSDK) を行ってください
 
 ## ステップ 2: カスタム イベントを定義する
 
