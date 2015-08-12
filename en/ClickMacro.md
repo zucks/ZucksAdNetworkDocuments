@@ -21,5 +21,5 @@ Example:
 * your iFrame URL: http://example.com/iframe?click=...
 * destination URL: http://example.com
  - your tag: `<iframe src="http://example.com/iframe?click=%CLICK_URL_ENC%http%3A%2F%2Fexample.com" />`
-  - will rendered: `<iframe src="http://example.com/iframe?click=%CLICK_URL_ENC%http%3A%2F%2Fexample.com" />`
+  - will rendered: `<iframe src="http://example.com/iframe?click=%2F%2Fk.zucks.net%2Frd%2F%3Fk%3Dhoge%26p%3Dfuga%26v%3Dpiyo%26rd%3Dhttp%3A%2F%2Fexample.com" />`
 
