@@ -3,7 +3,8 @@
 
 ## Request
 
-* End point: http://sh.zucks.net/opt/native/api/v1
+* End point: http://sh.zucks.net/opt/native/api/v1 / https://sh.zucks.net/opt/native/api/v1
+  * `https` でリクエストした場合、レスポンスに含むURL（ランディングページや画像ソース等）はすべてhttpsとなります
 * Method: GET
 
 ### Request Headers:
