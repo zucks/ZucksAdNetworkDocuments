@@ -22,7 +22,7 @@ https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#cust
 
 ## ステップ 1: Zucks Ad Network SDKの導入
 
-※現状こちらの手順書はv3以前の旧SDKに対応しています。
+**※現状こちらの手順書はv3以前の旧SDKに対応しています。**
 
 ### Android
 
