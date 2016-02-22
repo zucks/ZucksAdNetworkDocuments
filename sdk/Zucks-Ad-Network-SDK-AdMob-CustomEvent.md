@@ -24,13 +24,13 @@ https://developers.google.com/mobile-ads-sdk/docs/admob/ios/mediation?hl=ja#cust
 
 ### Android
 
-- [Zucks Ad Network Android用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/android/v3.2.1.html)
+- [Zucks Ad Network Android用SDK導入手順(v3.2.1)](https://ms.zucksadnetwork.com/media/sdk/manual/android/v3.2.1.html)
     - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/android/v3.2.1.html#integrateSDK) 及び [パーミッションの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/v3.2.1.html#addPermission) を行ってください
     - インタースティシャル広告の場合は、[インタースティシャル広告用Activityの追加](https://ms.zucksadnetwork.com/media/sdk/manual/android/v3.2.1.html#addInterstitialActivity) も行ってください
 
 ### iOS
 
-- [Zucks Ad Network iOS用SDK導入手順](https://ms.zucksadnetwork.com/media/sdk/manual/ios/v3.1.2.html)
+- [Zucks Ad Network iOS用SDK導入手順(v3.1.2)](https://ms.zucksadnetwork.com/media/sdk/manual/ios/v3.1.2.html)
     - [1. プロジェクトへの導入](https://ms.zucksadnetwork.com/media/sdk/manual/ios/v3.1.2.html#integrateSDK) を行ってください
 
 ## ステップ 2: カスタム イベントを定義する
