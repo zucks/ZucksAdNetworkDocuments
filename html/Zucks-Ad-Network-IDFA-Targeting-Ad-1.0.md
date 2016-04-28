@@ -27,5 +27,5 @@ zucksIdfa = {
 </script>
 
 <!-- ここから先はZucksの配信スクリプト -->
-<script type="text/javascript" src="http://j.zucks.net.zimg.jp/j?f=xxx"></script>
+<script type="text/javascript" src="https://j.zucks.net.zimg.jp/j?f=xxx"></script>
 ```
