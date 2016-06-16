@@ -59,7 +59,7 @@ Zucks Ad Serverから、JSON文字列を返します。
 * imp_url: URL. インプレッション計測用エンドポイント.
 * type: String. `native`.
 * image_src: URL. Banner image src.
-  * 画像は正方形サイズとなります。縦横比を保って表示してください。
+  * 縦横比を保って表示してください。
 * width: Integer. 画像の横幅.
 * height: Integer. 画像の高さ.
 * landing_url: URL. 広告タップ時の遷移先URL.
