@@ -1,5 +1,4 @@
-![](images/Zucks_AdNetwork_380x140.png)
-
+![](images/Zucks_AdNetwork_380x120.png)
 
 # メディアパートナー様向け レポートAPI 仕様書
 
