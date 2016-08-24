@@ -52,7 +52,7 @@ APIキーが指定されていない場合や、不正なAPIキーが指定さ�
 以下はエラーの一例です。
 
 ~~~sh
-$ curl -sk --compressed -H 'X-API-KEY; 36cfbea5-7ee0-48d7-8a49-69d33d32c4c2' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily?start=2016-07-01&end=2016-07-02' -w "%{http_code}"
+$ curl -sk --compressed -H 'X-API-KEY: ' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02' -w "%{http_code}"
 result
 "No API key specified"
 401
@@ -61,6 +61,7 @@ result
 ### サービス規約
 
 最新のサービス規約は以下のURLでご確認いただけます。
+
 https://ms.zucksadnetwork.com/media/terms.html
 
 
@@ -123,13 +124,14 @@ medium_id,medium_name,frame_id,frame_name,date,imp,click,payout,cpc,ctr,ecpm
 ## 補足
 
 #### frame_id
-frame_idは管理画面上で「Frame ID」として表示されているものに当たります。
+frame_idは弊社システム内の管理IDで、管理画面上で「Frame ID」として表示されているものとは異なります。
 
 #### frame_name
 frame_nameは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
 
 #### 収益額
-収益額は税込金額です。税額計算の単位によって誤差が生じる場合があります。確定金額は管理画面上の「支払いレポート」をご参照ください。
+収益額は税込金額です。税額計算の単位によって誤差が生じる場合があります。
+確定金額は管理画面上の「支払いレポート」をご参照ください。
 
 ## 注釈
 
