@@ -103,6 +103,7 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 | ステータス | メッセージ | 説明 |
 |---|---|---|
 | 400 | No Media registered yet | アカウントにメディアが登録されていない場合に発生します |
+| 400 | Invalid parameter start or end specified | レポート期間の指定に誤りがある場合に発生します |
 
 
 #### 更新頻度
