@@ -124,7 +124,7 @@ medium_id,medium_name,frame_id,frame_name,date,imp,click,payout,cpc,ctr,ecpm
 ## 補足
 
 #### frame_id
-frame_idは弊社システム内の管理IDで、管理画面上で「Frame ID」として表示されているものとは異なります。
+frame_idは整数値のIDで、管理画面上で「Frame ID」として表示されているものとは異なります。
 
 #### frame_name
 frame_nameは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
