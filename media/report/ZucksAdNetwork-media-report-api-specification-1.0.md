@@ -129,7 +129,7 @@ medium_id,medium_name,frame_id,frame_name,date,imp,click,payout,cpc,ctr,ecpm
 frame_idは整数値のIDで、管理画面上で「Frame ID」として表示されているものとは異なります。
 
 #### frame_id_hash
-frame_id+hashは管理画面上で「Frame ID」として表示されているものに当たります。
+frame_id_hashは管理画面上で「Frame ID」として表示されているものに当たります。
 
 #### frame_name
 frame_nameは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
