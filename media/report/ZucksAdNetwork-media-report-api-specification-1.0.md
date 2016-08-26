@@ -89,6 +89,7 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 | medium_id | 整数 | メディアID | 123 |
 | medium_name | 文字列 | メディア名 | "サンプルメディア" |
 | frame_id | 整数 | 枠ID | 12345 |
+| frame_id_hash | 文字列 | 枠ID(ハッシュ値) | "_1234asdf" |
 | frame_name | 文字列 | 枠名 | "起動時レクタングル枠" |
 | date | 文字列(年月日) | レポート日 | "2016-08-01" |
 | imp | 整数 | インプレッション数 | 123456 |
@@ -126,6 +127,9 @@ medium_id,medium_name,frame_id,frame_name,date,imp,click,payout,cpc,ctr,ecpm
 
 #### frame_id
 frame_idは整数値のIDで、管理画面上で「Frame ID」として表示されているものとは異なります。
+
+#### frame_id_hash
+frame_id+hashは管理画面上で「Frame ID」として表示されているものに当たります。
 
 #### frame_name
 frame_nameは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
