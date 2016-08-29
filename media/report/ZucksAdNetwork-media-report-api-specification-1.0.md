@@ -89,7 +89,7 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 | medium_id | 整数 | メディアID | 123 |
 | medium_name | 文字列 | メディア名 | "サンプルメディア" |
 | frame_id | 整数 | 枠ID | 12345 |
-| frame_id_hash | 文字列 | 枠ID(ハッシュ値) | "_1234asdf" |
+| frame_hid | 文字列 | 枠ID(ハッシュ値) | "_1234asdf" |
 | frame_name | 文字列 | 枠名 | "起動時レクタングル枠" |
 | date | 文字列(年月日) | レポート日 | "2016-08-01" |
 | imp | 整数 | インプレッション数 | 123456 |
@@ -114,7 +114,7 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 
 ~~~
 $ curl -s -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02'
-medium_id,medium_name,frame_id,frame_id_hash,frame_name,date,imp,click,payout,cpc,ctr,ecpm
+medium_id,medium_name,frame_id,frame_hid,frame_name,date,imp,click,payout,cpc,ctr,ecpm
 1,"メディアA",100,_12345asdfg,"枠A-A","2016-07-01",123456,1234,4936,4.97,0.42,20.97
 1,"メディアA",100,_12345asdfg,"枠A-A","2016-07-02",123456,1234,4936,4.97,0.42,20.97
 1,"メディアA",101,_23456sdfgh,"枠A-B","2016-07-01",123456,1234,4936,4.97,0.42,20.97
@@ -128,8 +128,8 @@ medium_id,medium_name,frame_id,frame_id_hash,frame_name,date,imp,click,payout,cp
 #### frame_id
 frame_idは整数値のIDで、管理画面上で「Frame ID」として表示されているものとは異なります。
 
-#### frame_id_hash
-frame_id_hashは管理画面上で「Frame ID」として表示されているものに当たります。
+#### frame_hid
+frame_hidは管理画面上で「Frame ID」として表示されているものに当たります。
 
 #### frame_name
 frame_nameは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
