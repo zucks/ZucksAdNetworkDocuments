@@ -89,7 +89,7 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 | medium_id | 整数 | メディアID | 123 |
 | medium_name | 文字列 | メディア名 | "サンプルメディア" |
 | frame_id | 整数 | 枠ID | 12345 |
-| frame_hid | 文字列 | 枠ID(ハッシュ値) | "_1234asdf" |
+| frame_hid | 文字列 | 枠ID(ハッシュ値) | "_12345asdfg" |
 | frame_name | 文字列 | 枠名 | "起動時レクタングル枠" |
 | date | 文字列(年月日) | レポート日 | "2016-08-01" |
 | imp | 整数 | インプレッション数 | 123456 |
