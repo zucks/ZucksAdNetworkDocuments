@@ -52,7 +52,7 @@ APIキーが指定されていない場合や、不正なAPIキーが指定さ�
 以下はエラーの一例です。
 
 ~~~sh
-$ curl -sk --compressed -H 'X-API-KEY: ' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02' -w "%{http_code}"
+$ curl -s -H 'X-API-KEY: ' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02' -w "%{http_code}"
 result
 "No API key specified"
 401
@@ -113,14 +113,14 @@ https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv
 リクエストサンプル
 
 ~~~
-$ curl -s --compressed -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02'
-medium_id,medium_name,frame_id,frame_name,date,imp,click,payout,cpc,ctr,ecpm
-1,"メディアA",100,"枠A-A","2016-07-01",123456,1234,4936,4.97,0.42,20.97
-1,"メディアA",100,"枠A-A","2016-07-02",123456,1234,4936,4.97,0.42,20.97
-1,"メディアA",101,"枠A-B","2016-07-01",123456,1234,4936,4.97,0.42,20.97
-1,"メディアA",101,"枠A-B","2016-07-02",123456,1234,4936,4.97,0.42,20.97
-2,"メディアB",102,"枠B-A","2016-07-01",123456,1234,4936,4.97,0.42,20.97
-2,"メディアB",102,"枠B-A","2016-07-02",123456,1234,4936,4.97,0.42,20.97
+$ curl -s -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02'
+medium_id,medium_name,frame_id,frame_id_hash,frame_name,date,imp,click,payout,cpc,ctr,ecpm
+1,"メディアA",100,_12345asdfg,"枠A-A","2016-07-01",123456,1234,4936,4.97,0.42,20.97
+1,"メディアA",100,_12345asdfg,"枠A-A","2016-07-02",123456,1234,4936,4.97,0.42,20.97
+1,"メディアA",101,_23456sdfgh,"枠A-B","2016-07-01",123456,1234,4936,4.97,0.42,20.97
+1,"メディアA",101,_23456sdfgh,"枠A-B","2016-07-02",123456,1234,4936,4.97,0.42,20.97
+2,"メディアB",102,_34567dfghj,"枠B-A","2016-07-01",123456,1234,4936,4.97,0.42,20.97
+2,"メディアB",102,_34567dfghj,"枠B-A","2016-07-02",123456,1234,4936,4.97,0.42,20.97
 ~~~
 
 ## 補足
