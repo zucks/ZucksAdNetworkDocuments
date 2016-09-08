@@ -43,7 +43,6 @@
   * `withCredentials` 属性を `true` にてリクエストしてください
   * `Request Headers` の `Origin` を設定してください
 
-
 ## Response
 
 Zucks Ad Serverから、JSON文字列を返します。
@@ -71,6 +70,12 @@ Zucks Ad Serverから、JSON文字列を返します。
 配信できる広告案件がないときに返されます。案件がない場合でも、 HTTP status: 200 OK で返します。
 
 `imp_url` 値を後述 Firing Impressions にしたがって処理することで、Zucks Ad Network管理画面上で「配信した広告がなかった」数としてカウントします。
+
+### その他
+
+レスポンス内容はキャッシュせずに、広告表示のタイミングで毎回APIを叩いて習得したレスポンスを利用してください。
+
+キャッシュした内容で広告表示を行うと正しく広告が表示されていないと判断されインプレッション、クリックが正しくカウントされない場合があります。
 
 ## Example
 
