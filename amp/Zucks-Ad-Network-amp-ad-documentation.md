@@ -2,8 +2,6 @@
 
 ### 前提
  - メディアのサイトがAMPに対応している必要があります
- - 対応する枠の種類:
-    - インラインのみ
 
 
 ### 導入
@@ -16,7 +14,7 @@
     width="{WIDTH}"
     height="{HEIGHT}"
     type="zucks"
-    data-frame_id="{HID}">
+    data-frame-id="{HID}">
 </amp-ad>
 ```
 
@@ -30,7 +28,7 @@
     width="320"
     height="50"
     type="zucks"
-    data-frame_id="_abc123">
+    data-frame-id="_abc123">
 </amp-ad>
 ```    
 
