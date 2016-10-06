@@ -14,13 +14,13 @@
     width="{WIDTH}"
     height="{HEIGHT}"
     type="zucks"
-    data-frame-id="{HID}">
+    data-frame-id="{FRAME-ID}">
 </amp-ad>
 ```
 
 - 必要なパラメータにそれぞれの値を置き換えます
     - WIDTH、HEIGHTは枠のサイズ
-    - HIDはZucksアドネットワークの管理画面の枠詳細ページで取得してください
+    - FRAME-IDはZucksアドネットワーク管理画面のメディア/広告枠管理ページの`Frame ID`で取得してください
 
 例：
 ```html
