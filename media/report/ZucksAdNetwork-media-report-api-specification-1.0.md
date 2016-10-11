@@ -41,7 +41,7 @@ APIキーは管理画面上から発行・再発行・削除できます。
 リクエストヘッダ `X-API-KEY` に、発行したAPIキーをご指定ください。以下に `curl` を用いたリクエスト例を示します。
 
 ~~~sh
-$ curl -s -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily?start=2016-07-01&end=2016-07-02'
+$ curl -s -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv?start=2016-07-01&end=2016-07-02'
 ~~~
 
 ### エラーについて
@@ -142,4 +142,3 @@ frame_nameは、メディア名、枠タイプ、OS種別、掲載位置種別�
 ## 注釈
 
 ※1. 管理画面  https://ms.zucksadnetwork.com/media/admin/
-
