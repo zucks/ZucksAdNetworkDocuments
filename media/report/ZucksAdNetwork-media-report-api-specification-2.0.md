@@ -119,7 +119,6 @@ https://ms.zucksadnetwork.com/web_api/media/report/v2.0/frame/daily.csv
 ~~~
 $ curl -s -H 'X-API-KEY: 21ba4e3r-1131-8823-81as-1lk343je218e' 'https://ms.zucksadnetwork.com/web_api/media/report/v2.0/frame/daily.csv?start=2016-07-01&end=2016-07-02'
 medium_id,medium_name,frame_id,frame_hid,frame_page,frame_size,frame_position_name,frame_type_name,frame_os_name,date,imp,click,payout,cpc,ctr,ecpm
-13150,ぴよピヨ〜ん,41103,_abc379a655,通常バナー,320x50,1.インライン,app,iPhone,2016-10-10,352,2,24,12.26,0.57,69.66
 1,メディアA,100,_12345asdfg,通常バナー,320x50,1.インライン,app,Android,2016-7-1,123456,1234,4936,4.97,0.42,20.97
 1,メディアA,100,_12345asdfg,通常バナー,320x50,1.インライン,app,iPhone,2016-7-2,123456,1234,4936,4.97,0.42,20.97
 1,メディアA,101,_23456sdfgh,通常バナー,320x50,1.インライン,app,Android,2016-7-1,123456,1234,4936,4.97,0.42,20.97
@@ -140,7 +139,7 @@ frame_hidは管理画面上で「Frame ID」として表示されているもの
 frame_pageは管理画面上で「ページ(枠)の名前」として表示されているものに当たります。
 
 #### frame_size
-frame_sizeは `x` で区切られた「横x縦」の枠サイズです。
+frame_sizeは `x`(小文字のエックス) で区切られた「横x縦」の枠サイズです。
 
 #### frame_os_name
 frame_os_nameは枠のOS種別です。種別が「Webサイト」のメディアに紐付く枠では、特定のOS種別を持たないため、空となります。
