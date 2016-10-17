@@ -3,17 +3,18 @@
 
 ## 2016-10-14, Version 2.0
 - エントリポイントにバージョン番号を含めるようになりました
-  - Version 1.0
+  - 例
+    - Version 1.0
       - `https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv`
-  - Version 2.0
+    - Version 2.0
       - `https://ms.zucksadnetwork.com/web_api/media/report/v2.0/frame/daily.csv`
-  - バージョン番号の指定がない場合は、これまで通り動作します
+  - バージョンの指定がない場合は、これまで通り動作します
 - 「1. 枠分析レポート（日別）」のレスポンス項目を追加・削除しました
+  - `frame_size` を追加
+  - `frame_position_name` を追加
+  - `frame_type_name` を追加
+  - `frame_name` を追加
   - `frame_page` を削除
-  - `frame_size` を削除
-  - `frame_position_name` を削除
-  - `frame_type_name` を削除
-  - `frame_name` を削除
 
 ## 2016-09-28, Version 1.0
 - 「1. 枠分析レポート（日別）」の `frame_name` に関する誤記を修正
