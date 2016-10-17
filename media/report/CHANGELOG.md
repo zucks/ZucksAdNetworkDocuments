@@ -6,6 +6,7 @@
   - 例
     - Version 1.0
       - `https://ms.zucksadnetwork.com/web_api/media/report/frame/daily.csv`
+      - `https://ms.zucksadnetwork.com/web_api/media/report/v1.0/frame/daily.csv`
     - Version 2.0
       - `https://ms.zucksadnetwork.com/web_api/media/report/v2.0/frame/daily.csv`
   - バージョンの指定がない場合は、これまで通り動作します
