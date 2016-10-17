@@ -12,12 +12,13 @@
   - バージョンの指定がない場合は、`v1.0` として動作します
 - 「1. 枠分析レポート（日別）」のレスポンス項目を追加・削除しました
   - 削除
-    - `frame_page`
+    - `frame_name`
   - 追加
+    - `frame_page`
     - `frame_size`
     - `frame_position_name`
     - `frame_type_name`
-    - `frame_name`
+    - `frame_os_name`
 
 ## 2016-09-28, Version 1.0
 - 「1. 枠分析レポート（日別）」の `frame_name` に関する誤記を修正
