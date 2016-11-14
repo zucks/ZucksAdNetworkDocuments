@@ -55,7 +55,7 @@ IDFA/AdIDキックバック先エンドポイント
      - 成果発生時の金額
      - | ``price=800``
        | ``price=10.0``
-   * - currency
+   * - ``currency``
      - 文字列(省略可)
      - 成果金額の通貨単位
      - | ``currency=jpy`` (日本円)
