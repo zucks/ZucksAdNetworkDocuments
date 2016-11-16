@@ -35,11 +35,7 @@
 
 ###### 3. サイトにAMPタグを貼り付ける
 
-    - AMP広告タグを適用する際にサイトに下記のスクリプトを入れることを推奨します
-
-```html
-<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
-```
+詳細はこちら：https://www.ampproject.org/docs/reference/amp-ad.html
 
 
 ### 参考
