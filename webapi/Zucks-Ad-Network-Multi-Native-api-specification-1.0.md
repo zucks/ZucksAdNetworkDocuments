@@ -29,7 +29,7 @@
 * `frameid` : Required.
   * 広告枠毎に発行されるFrame ID
   * Zucks Ad Network管理画面のメディア/広告枠管理ページよりご確認ください
-* `num` : Optional.
+* `num` : Required.
   * 広告要求数。1～5。
   * 指定された要求数分広告案件が存在しない場合、存在する数だけ返却します
 * `ida` : Optional.
