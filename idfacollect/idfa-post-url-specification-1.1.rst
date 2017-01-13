@@ -2,7 +2,7 @@
  Zucks IDFA/AdID収集連携仕様
 =============================
 
-:version: 1.0
+:version: 1.1
 
 キックバック先情報
 ==================
@@ -38,6 +38,12 @@ IDFA/AdIDキックバック先エンドポイント
      - 端末識別用の広告ID
      - | ``idfa=XXXX-XXXXXX-XXXXX``
        | ``adid=XXXX-XXXXXX-XXXXX``
+   * - ``device_type``
+     - 文字列
+     - 端末のOS種別
+     - | ``device_type=android phone``
+       | ``device_type=android tablet``
+       | ``device_type=iphone``
    * - ``from``
      - 文字列
      - 計測サービス識別名
@@ -53,8 +59,8 @@ IDFA/AdIDキックバック先エンドポイント
    * - ``amount``
      - 実数(省略可)
      - 成果発生時の金額
-     - | ``price=800``
-       | ``price=10.0``
+     - | ``amount=800``
+       | ``amount=10.0``
    * - ``currency``
      - 文字列(省略可)
      - 成果金額の通貨単位
