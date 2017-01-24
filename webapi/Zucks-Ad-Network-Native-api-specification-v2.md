@@ -1,4 +1,4 @@
-# Zucks Ad Network Native Ad API v2 Specification
+# Zucks Ad Network Native Ad API v2.0 Specification
 
 ## Request
 
