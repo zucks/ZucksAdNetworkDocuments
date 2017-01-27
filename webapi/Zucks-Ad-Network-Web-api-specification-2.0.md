@@ -23,7 +23,7 @@
 
 ### Request Parameters:
 
-* frameid: Integer, Requierd.
+* frameid: String, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は配信されません
 * ida: IDFA(iOS) or Advertising ID(Android), Optional.
@@ -90,7 +90,7 @@ Response Bodyはありません。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=_abcdef1234
+http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234
 ```
 
 ### Response
@@ -113,7 +113,7 @@ HTML ad:
 {
     "status": "ok",
     "type": "html",
-    "html": "<!DOCTYPE html><html><head>...</head><body>...</body></html>",
+    "html": "<div><a href='...'>...</div>",
     "imp_url": "http://k.zucks.net/..."
 }
 ```
@@ -132,7 +132,7 @@ HTML ad:
 
 ### HTML ad
 
-`html` の内容を、 WebViewにレンダリングしてください。
+`html` の内容を、ブラウザ/WebViewにレンダリングしてください。
 
 
 ## Firing Impressions
