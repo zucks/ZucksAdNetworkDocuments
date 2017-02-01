@@ -1,5 +1,7 @@
-# Zucks Ad Network Native Ad Specification
+# Zucks Ad Network Native Ad API v1.1 Specification
 
+**こちらは旧バージョンのAPIとなります。**  
+**新しいバージョンの [Native Ad API（v2）](Zucks-Ad-Network-Native-api-specification-v2.md) を公開しております。**
 
 ## Request
 
