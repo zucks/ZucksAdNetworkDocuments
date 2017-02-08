@@ -176,12 +176,24 @@ https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
 このURLから画像を取得し、縦横比を保った状態で表示してください。  
 `image_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
 
-`text` は全ての広告について設定されていますので、必ず表示するようにしてください。
-
-`sub_text` は追加で表示することができるテキストです。  
+`link_button_text` はリンクボタン設置時に利用することができるテキストです。  
 広告によっては空文字の場合があります。
 
+広告表示時には広告であることを明記するスポンサーラベル（`Sponsored`、`AD`、`広告`など）を必ず表示してください。
+
 広告在庫状況によって、要求数分の広告が返却されない場合があります。
+
+### Rendering Sample
+
+1. 広告画像（`image_src`）
+2. タイトル（`title`）
+3. 広告の本文（`body_text`）
+4. サービス・商品名（`product_name`）
+5. 広告主名（`advertiser_name`）
+6. リンクボタン設置時のテキスト（`link_button_text`）
+7. スポンサーラベル
+
+![ネイティブ広告表示例](images/native_ad_sample.png)
 
 
 ## Firing Impressions
