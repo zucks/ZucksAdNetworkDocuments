@@ -1,14 +1,12 @@
-# Zucks Ad Network Multi Native Ad API v1.0 Specification
-
-**こちらは旧バージョンのAPIとなります。**  
-**新しいバージョンの [Multi Native Ad API（v2）](Zucks-Ad-Network-Multi-Native-api-specification-v2.md) を公開しております。**
+# Zucks Ad Network Multi Native Ad API v2.0 Specification
 
 ネイティブ広告を複数件返却するAPIの仕様書となります
+
 
 ## Request
 
 * End point
-  * `https://sh.zucks.net/opt/native/api/v1m`
+  * `https://sh.zucks.net/opt/native/api/v2m`
 * Method
   * GET
 
@@ -69,10 +67,10 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 * `status` : String
   * `ok`
 * `ads` : Array
-  * `imp_url` : String
-    * インプレッション計測用エンドポイント
   * `type` : String
     * `native`
+  * `imp_url` : String
+    * インプレッション計測用エンドポイント
   * `image_src` : String
     * 広告画像URL
     * 縦横比を保って表示してください
@@ -80,14 +78,23 @@ JSON文字列を返却します。文字コードはUTF-8となります。
     * 広告画像の横幅
   * `height` : String
     * 広告画像の高さ
-  * `landing_url` : String
-    * 広告タップ時の遷移先URL
-  * `text` : String
+  * `title` : String
+    * 広告タイトル
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `body_text` : String
     * 広告の本文
     * 全角1～44文字（半角1～88文字）の文字列
-  * `sub_text` : String
-    * 広告の追加テキスト
-    * 全角0～18文字（半角0～36文字）の文字列
+  * `product_name` : String
+    * サービス・商品名
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `advertiser_name` : String
+    * 広告主名
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `link_button_text` : String
+    * リンクボタン設置時のテキスト
+    * 全角0～7文字（半角0～14文字）の文字列
+  * `landing_url` : String
+    * 広告タップ時の遷移先URL
 
 #### 広告案件が存在しない場合
 
@@ -112,7 +119,7 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 ### Request
 
 ```
-https://sh.zucks.net/opt/native/api/v1m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
 ```
 
 ### Response
@@ -125,23 +132,29 @@ https://sh.zucks.net/opt/native/api/v1m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
     "ads": [
         {
             "type": "native",
+            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
             "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
             "width": "114",
             "height": "114",
-            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "text": "【ネイティブ広告の本文1】",
-            "sub_text": "【ネイティブ広告の追加テキスト1】"
+            "title": "【広告タイトル1】",
+            "body_text": "【広告の本文1】",
+            "product_name": "【サービス・商品名1】",
+            "advertiser_name": "【広告主名1】",
+            "link_button_text": "【リンクボタン設置時のテキスト1】",
+            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F..."
         },
         {
             "type": "native",
+            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
             "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
             "width": "114",
             "height": "114",
-            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "text": "【ネイティブ広告の本文2】",
-            "sub_text": "【ネイティブ広告の追加テキスト2】"
+            "title": "【広告タイトル2】",
+            "body_text": "【広告の本文2】",
+            "product_name": "【サービス・商品名2】",
+            "advertiser_name": "【広告主名2】",
+            "link_button_text": "【リンクボタン設置時のテキスト2】",
+            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F..."
         }
     ]
 }
