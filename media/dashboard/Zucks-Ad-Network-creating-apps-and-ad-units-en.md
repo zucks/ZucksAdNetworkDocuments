@@ -1,13 +1,13 @@
-# ZucksAdNetwork Creating Ad Units
+# Creating Ad Units - ZucksAdNetwork
 
 ## Overview
 
 Describes the steps to create Ad Unit on the Zucks Ad Network dashboard.  
 <a href="https://ms.zucksadnetwork.com/media/admin/#/login" target="_blank">Zucks Ad Network dashboard</a>
 
-- Create new application
+- Create a new application
     - Register application information
-- Create Ad Unit
+- Create an Ad Unit
     - Banner
     - Interstitial
     - Inline(Fullscreen)
@@ -15,10 +15,10 @@ Describes the steps to create Ad Unit on the Zucks Ad Network dashboard.
 
 ## How to create Ad Units
 
-### Create Application
+### Create an Application
 
 Select the `メディア/広告枠管理` menu and create an application from the `アプリ新規登録` button.  
-(If already created, go to the [Create Ad Unit](#register-ad-unit) step)
+(If already created, go to the [Adding an Ad Unit](#adding-an-ad-unit) step)
 
 <img src="img/dashboard_create_app.png">
 
@@ -36,7 +36,7 @@ Select the `メディア/広告枠管理` menu and create an application from th
 
 <img src="img/dashboard_configure_app.png">
 
-#### iOS category
+#### iOS categories
 
 | display            | description     |
 |:-------------------|:----------------|
@@ -64,7 +64,7 @@ Select the `メディア/広告枠管理` menu and create an application from th
 |ユーティリティ          |Utilities        |
 |天気                 |Weather           |
 
-#### Android category
+#### Android categories
 
 | display            | description            |
 |:-------------------|:-----------------------|
@@ -96,7 +96,7 @@ Select the `メディア/広告枠管理` menu and create an application from th
 |ゲーム               | Games                   |
 
 
-### Register Ad Unit
+### Register an Ad Unit
 
 #### Banner
 
@@ -137,16 +137,16 @@ Select the `メディア/広告枠管理` menu and create an application from th
 
 <img src="img/dashboard_create_fullscreen_interstitial.png">
 
-### Adding Ad Unit
+### Adding an Ad Unit
 
 When adding ad unit to registered application, create it from the `アプリ広告枠追加` button in the `広告表示枠` column.
 
 <img src="img/dashboard_create_frame.png">
 
 
-### Find the FrameID
+### Find the Frame ID
 
-When you press the `FrameID` button of the created ad unit, FrameID is displayed.
+When you press the `Frame ID` button of the created ad unit, Frame ID is displayed.
 
 <img src="img/dashboard_display_frame_id.png">
 
