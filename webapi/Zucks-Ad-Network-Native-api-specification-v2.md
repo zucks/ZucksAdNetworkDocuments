@@ -148,7 +148,7 @@ https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
 
 ## Rendering the Ad
 
-`image_src` は、png/jpg/gifなどの画像ファイルを示すURLです。  
+`image_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。  
 このURLから画像を取得し、縦横比を保った状態で表示してください。  
 `image_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
 
