@@ -1,24 +1,38 @@
-# Zucks Ad Network S3経由のIDFAリストファイルの受け渡しとセグメント自動更新
+# Zucks Ad Network S3経由の IDFA/AdID リストファイルの受け渡しとセグメント自動更新
+
+## 概要
+
+Zucks Ad Network の配信でターゲティングとして利用したい IDFA/Android advertising ID (以下 ida) のリストをS3をにアップロードしていただくことで、セグメントを自動更新する仕組み
+
+## 事前準備
+
+S3での自動更新を利用される場合は、弊社担当者にご連絡ください。
+連携に必要なIAMユーザーのキーの発行、アップロード先S3の用意を行います。
+
+* 発行されたIAMユーザーで用意されたアップロード先S3にアクセスできることを確認してください
+* アップロードするパスの形式
+  * `s3://zucks-advertisers-idfas/(代理店専用のプレフィックス)/advertisers/(広告主ID)/idfa-list-groups/(IDFAリストグループID)/(idaリストファイル)`
+  * 広告主IDは[Zucks Ad Network管理画面](https://ms.zucksadnetwork.com/agent)の広告主一覧ページ(`https://ms.zucksadnetwork.com/agent/<agent_id>/company/advertiser/list`)で確認ください
 
 ## 連携手順
 
-(事前準備)
-
-Zucks Ad Network担当者にご確認ください
-
-* IAMユーザのキーの発行
-* アップロード先S3パスの確認
-  - `s3://zucks-advertisers-idfas/(代理店ごとのパスプレフィックス)`
-
-(手順)
-
-1. S3にIDFAリストファイルをアップロードします
-  - アップロードするパス: `s3://zucks-advertisers-idfas/(代理店ごとのパスプレフィックス)/advertisers/(広告主ID)/idfa-list-groups/(IDFAリストグループID)/(IDFAリストファイル)`
-  - アップロードしたIDFAリストファイルからIDFAリストが作成されます
-  - 作成されるIDFAリストの名前はアップロードしたIDFAリストファイルの名前となります
-  - 作成されたIDFAリストはアップロードしたs3オブジェクトのパス(キー)に含まれるIDFAリストグループIDのIDFAリストグループに紐づけられます
+1. idaリストファイルを用意する
+  * 1行に1つのidaを指定してください
+1. IDFAリストグループを用意する
+    - https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/ida-list-api-specification-2.0.md
+1. S3にidaリストファイルをアップロードする
+  * アップロードしたidaリストファイルから`IDFAリスト`が作成されます
+    * アップロードしたidaリストファイルの名前が生成されるIDFAリストの名前になります
+    * idaリストファイル名にマルチバイト文字列は使用できません
+  * 作成されたIDFAリストはアップロードしたs3オブジェクトのパス(キー)に含まれるIDFAリストグループIDの`IDFAリストグループ`に紐づけられます
 
 ※ その他補足
-* 広告主IDは[Zucks Ad Network管理画面](https://ms.zucksadnetwork.com/agent)の広告主一覧ページでご確認ください
-* IDFAリストグループの作成等について
-  - https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/ida-list-api-specification-2.0.md
+
+* IDFAリストグループを作成後、そのidaリストを配信で使えるよう取り込み処理が走ります
+  * idaリストファイルのサイズにもよりますがidaリストの取り込みには数分から数時間かかります
+    * 取り込み状況は管理画面で確認できます
+
+用語
+
+* IDFAリスト ... idaのリスト。リターゲティング配信で使うセグメントの一単位
+* IDFAリストグループ ... 複数のIDFAリストをグループとして名前をつけたもの。リターゲティング配信で使える複合セグメント
