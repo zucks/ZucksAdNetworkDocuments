@@ -6,12 +6,12 @@ Zucks Ad Networkのレポートを取得するAPIです。
 
 # リクエスト
 
-レポートAPIを使用するためには認証用トークンを発行する必要があります。トークンの発行、再発行等は弊社担当者までご連絡ください。
+レポートAPIを使用するためには認証用APIキーを発行する必要があります。APIキーの発行、再発行等は弊社担当者までご連絡ください。
 
 レポート取得のリクエストは例えばcurlコマンドを用いて次のようにできます。
 
 ``` sh
-$ curl -H 'x-api-key:<api-token>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=<date>"
+$ curl -H 'x-api-key:<api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=<date>"
 ```
 
 ### APIリクエストの仕様
@@ -21,7 +21,7 @@ $ curl -H 'x-api-key:<api-token>' "https://ms.zucksadnetwork.com/web_api/agent/r
 | URL | `https://ms.zucksadnetwork.com/web_api/agent/report/v6` |
 | HTTPメソッド | GET |
 | GETパラメータ | `date` : 取得したい対象日時 (例: "2017-04-20") |
-| ヘッダー | `x-api-key` : レポートAPIで認証するためのAPIトークン |
+| ヘッダー | `x-api-key` : レポートAPIで認証するためのAPIキー |
 
 
 
@@ -66,7 +66,7 @@ GETパラメータで指定した日時のレポートデータをCSV形式で�
 #### レスポンス例
 
 ``` sh
-$ curl -H 'x-api-key:<api-token>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=2017-04-20"
+$ curl -H 'x-api-key:<api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=2017-04-20"
 "2017-04-20","6407.00","6179","527","204","12.16","1","【TEST】テストオーダー","【TEST】テスト広告主","1","【TEST】テストキャンペーン","1","【TEST】テストクリエイティブ","https://zucks.co.jp/","1","---","","","---","320×50"
 ```
 
