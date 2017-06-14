@@ -12,6 +12,7 @@ Describes the steps to create Ad Unit on the Zucks Ad Network dashboard.
     - Interstitial
     - Inline(Fullscreen)
     - Interstitial(Fullscreen)
+    - Native
 
 ## How to create Ad Units
 
@@ -136,6 +137,17 @@ Select the `メディア/広告枠管理` menu and create an application from th
 - Click the `作成する` button to create ad unit
 
 <img src="img/dashboard_create_fullscreen_interstitial.png">
+
+#### Native
+
+- <span style="color:red;">※required</span> : Set the name of the frame to `ページ(枠)の名前` (This is the frame name displayed on the report)
+- Select `ネイティブ広告` from `広告の種類`
+- Choose the size of the ad from `枠のサイズ`
+- Set `インライン` to `枠の掲載位置`
+- Click the `作成する` button to create ad unit
+
+
+<img src="img/dashboard_create_native.png">
 
 ### Adding an Ad Unit
 
