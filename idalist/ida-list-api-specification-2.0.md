@@ -16,10 +16,11 @@ Zucks AdNetwork の配信でターゲティングとして利用したい IDFA/A
 Zucks AdNetwork では以下のAPIを提供します。
 
 
-* idaリストグループの新規作成
-* idaリストグループのステータス確認
-* idaリストグループにidaリストを追加
-* idaリストグループからidaリストを削除
+* [idaリストとidaリストグループの新規作成](#create-ida-list-and-ida-list-group)
+* [idaリストグループの新規作成](#create-ida-list-group)
+* [idaリストグループのステータス確認](#show-ida-list-group)
+* [idaリストグループにidaリストを追加](#add-ida-list-to-ida-list-group)
+* [idaリストグループからidaリストを削除](#remove-ida-list-from-ida-list-group)
 
 
 ----
@@ -28,7 +29,7 @@ Zucks AdNetwork では以下のAPIを提供します。
 ## 準備
 
 * Zucks AdNetwork idaリスト用 APIキー
-  * Zucks担当者にご確認ください
+  * 不明な場合は Zucks 担当者にご確認ください
 
 ## 全ての機能で共通の仕様
 
@@ -40,7 +41,8 @@ Zucks AdNetwork では以下のAPIを提供します。
 
 ##### 認証
 
-* idaリスト用 APIキーをリクエストヘッダに使った認証
+* 管理画面で確認できる idaリスト用 APIキーをリクエストヘッダに使った認証
+  * 将来的にAPIキーは管理画面から再発行、無効化を行えるようにする予定
 
 ##### リクエスト例
 
@@ -63,10 +65,9 @@ Zucks AdNetwork では以下のAPIを提供します。
 
 ----
 
+### <a name="create-ida-list-and-ida-list-group"> idaリストとidaリストグループの新規作成
 
-### idaリストグループの新規作成
-
-idaリストグループを作成します。
+idaリストとidaリストグループを作成します
 
 ![図_idaリストグループの新規作成](img-2.0/02-create.png)
 
@@ -83,7 +84,7 @@ POST
 ##### PAYLOAD
 
 * advertiser_id: idaリストを利用する広告主ID(管理画面から確認できます) (必須)
-* name: idaリストグループの名前、リスト名はユニークである必要があります (必須/120文字以内)
+* name: idaリストグループの名前 (必須/120文字以内)
 * list_name: idaリストの名前(省略可/120文字以内) 省略した場合は自動で名前が付けられます。
 * list_ida: IDFA/AdIDの配列(必須)
 
@@ -167,7 +168,85 @@ POST
 }
 ```
 
-### idaリストグループのステータス確認
+---
+
+### <a name="create-ida-list-group"> idaリストグループの新規作成
+
+idaリストグループを作成します
+
+idaリストが未登録の空のidaリストグループであるため、実際にターゲティングで使用するためには[idaリストグループにidaリストを追加](#add-ida-list-to-ida-list-group)のAPIを使用してidaリストを追加する必要があります。(参考:[FAQ](#faq))
+
+##### URL
+
+    https://ms.zucksadnetwork.com/app.php/web_api/ida/v2/groups/create
+
+##### リクエストメソッド
+
+POST
+
+##### PAYLOAD
+
+* advertiser_id: idaリストを利用する広告主ID(管理画面から確認できます) (必須)
+* name: idaリストグループの名前 (必須/120文字以内)
+
+```json
+{
+  "advertiser_id": 10324,
+  "name": "10日起動していないユーザー"
+}
+```
+
+##### レスポンス
+
+作成したidaリストグループの情報を返します
+
+##### ステータスコード
+
+ * 200: 正常に終了
+ * 400: データのバリデーションエラーなどの場合
+ * 401: 認証に失敗した場合
+
+##### レスポンス内容
+
+* 成功した場合
+  * request_at: APIをリクエストされた日時
+  * type: "ida_list_group" が固定で入ります
+  * id: 作成されたidaリストグループID。
+  * name: グループ名
+  * created_at: グループを作成した日時
+  * advertiser: このidaリストを使用できる広告主情報
+    * type: "advertiser" 固定
+    * id: 広告主ID
+  * lists: グループに所属するidaリストの配列
+    * idaリストは未登録のためから配列になります
+
+```json
+{
+  "request_at": "2015-05-01T12:00:00+0900",
+  "type": "ida_list_group",
+  "id": 1,
+  "name": "10日起動していないユーザー",
+  "created_at": "2015-04-01T12:00:00+0900",
+  "advertiser": {
+    "type": "advertiser",
+    "id": 100
+  },
+  "lists": []
+}
+```
+
+ * 失敗した場合
+
+```json
+{
+  "error": ["Requested advertiser_id parameter is invalid. Reconfirm advertiser_id parameter."],
+  "request_at": "2015-05-01T12:00:00+0900"
+}
+```
+
+---
+
+### <a name="show-ida-list-group"> idaリストグループのステータス確認
 
 作成したidaリストグループの状態を返却します。
 アップロードしたidaリストの情報を確認することができます。
@@ -253,7 +332,7 @@ GET
 
 ----
 
-### idaリストグループにidaリストを追加
+### <a name="add-ida-list-to-ida-list-group"> idaリストグループにidaリストを追加
 
 すでに作られたidaリストグループに、idaリストを追加します。
 
@@ -298,7 +377,7 @@ POST
 
 ----
 
-### idaリストグループからidaリストを削除
+### <a name="remove-ida-list-from-ida-list-group"> idaリストグループからidaリストを削除
 
 idaリストグループから、idaリストを削除します。
 （注意）idaリストグループにidaリストが１つしかない場合は削除することはできません。
@@ -334,3 +413,12 @@ DELETE
   "request_at": "2015-05-01T12:00:00+0900"
 }
 ```
+
+## <a name="faq"> FAQ
+
+##### 空のidaリスト、idaリストグループを広告配信のターゲティングで使用した場合どうなるか
+
+ターゲティングするセグメントが空となります。
+リターゲティング案件の場合はリタゲ対象なしと判断され広告は配信されません。
+デリタゲ案件の場合はデリタゲ対象なしと判断され全体に配信されますので空のidaリスト、idaリストグループの使用に注意してください。
+  
