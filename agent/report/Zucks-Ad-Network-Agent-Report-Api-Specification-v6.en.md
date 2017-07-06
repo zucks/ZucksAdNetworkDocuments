@@ -11,7 +11,7 @@ In order to use the report API, you need to issue an API key for authentication.
 A request to retrieve a report can be made using the curl command as follows, for example.
 
 ```Sh
-$ curl -H 'x-api-key: <api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date= <date>"
+$ curl -H 'x-api-key:<api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=<date>"
 ```
 
 ### API Request Specification
@@ -52,7 +52,7 @@ Character code: UTF-8
 | 17 | string | native ad title (empty string except creative type 4) |
 | 18 | string | native ad text (empty string except creative type 4) |
 | 19 | string | OS (iOS, Android, ---) |
-| 20 | string | Ad size (320 x 50 format) |
+| 20 | string | Ad size (320x50 format) |
 
 ### Status code
 
@@ -66,8 +66,8 @@ Character code: UTF-8
 #### Response Example
 
 ```Sh
-$ Curl -H 'x-api-key: <api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=2017-04-20"
-"TEST" test advertiser "," TEST "test advertiser", "TEST test advertiser", "TEST test order", "TEST test order", "TEST test order", "2017-04-20", "6407.00", "6179", "527", "204", "12.16" 1 "," 【TEST】 Test Campaign "," 1 "," 【TEST】 Test Creative "," https://zucks.co.jp/ "," 1 "," --- "," "," "," --- "," 320 × 50 "
+$ curl -H 'x-api-key:<api-key>' "https://ms.zucksadnetwork.com/web_api/agent/report/v6?date=2017-04-20"
+"2017-04-20","6407.00","6179","527","204","12.16","1","【TEST】テストオーダー","【TEST】テスト広告主","1","【TEST】テストキャンペーン","1","【TEST】テストクリエイティブ","https://zucks.co.jp/","1","---","","","---","320×50"
 ```
 
 
