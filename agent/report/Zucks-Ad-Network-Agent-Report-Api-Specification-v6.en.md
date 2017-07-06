@@ -33,8 +33,8 @@ Character code: UTF-8
 
 | Index | type | item name |
 | --- | --- | --- |
-| 1 | string | Report date (YYYY-MM-DD) |
-| 2 | decimal | amount of incidence |
+| 1 | string | report date (YYYY-MM-DD) |
+| 2 | decimal | amount of payment (yen) |
 | 3 | integer | number of impression |
 | 4 | integer | number of click |
 | 5 | integer | number of conversion (CV) |
