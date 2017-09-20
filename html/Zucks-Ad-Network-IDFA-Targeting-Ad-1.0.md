@@ -2,7 +2,7 @@
 
 ### 仕様
 
-以下の構造を持った `zucksIdfa` オブジェクトをJavaScriptのグローバル変数をZucksの配信スクリプトの読み込み前に宣言することで、広告IDを用いたターゲティング広告を配信することが出来ます。
+以下の構造を持った `zucksIdfa` オブジェクトをJavaScriptのグローバル変数としてZucksの配信スクリプトの読み込み前に宣言することで、広告IDを用いたターゲティング広告を配信することが出来ます。
 
 * ida
   * 広告ID(Apple IDFAかGoogle Advertising IDのどちらかを設定してください)
@@ -21,8 +21,8 @@
 ```html
 <script type="text/javascript">
 zucksIdfa = {
-  ida: "abcedfg",
-  lat: 1
+  ida: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  lat: 0
 }
 </script>
 
