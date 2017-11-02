@@ -1,5 +1,6 @@
 # Zucks Ad Network WEB API Specification
 
+**非推奨: [v2](https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/webapi/Zucks-Ad-Network-Web-api-specification-2.0.md) をお使いください**
 
 ## Request
 
