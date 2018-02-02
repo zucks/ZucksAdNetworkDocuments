@@ -1,7 +1,7 @@
 # Zucks Ad Network 代理店向けレポートAPI仕様書 v6
 
 こちらは旧バージョンのAPIとなります。
-新しいバージョンの[Zucks Ad Network 代理店様向けレポートAPI仕様書 v7](Zucks-Ad-Network-Agent-Report-Api-Specification-v7.md)を公開しております。
+新しいバージョンの[Zucks Ad Network 代理店様向けレポートAPI仕様書 v7](Zucks-Ad-Network-Agent-Report-Api-Specification-v7.md)を公開しているのでご利用ください。
 
 ### 概要
 
