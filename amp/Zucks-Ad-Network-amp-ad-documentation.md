@@ -21,8 +21,11 @@
 - 必要なパラメータにそれぞれの値を置き換えます
     - WIDTH、HEIGHTは枠のサイズ
     - FRAME-IDはZucksアドネットワーク管理画面のメディア/広告枠管理ページの`Frame ID`で取得してください
+    - ネイティブ広告の場合はdata-ad-typeを指定する必要があります
 
 例：
+#### バナー広告
+
 ```html
 <amp-ad
     width="320"
@@ -32,6 +35,17 @@
 </amp-ad>
 ```    
 
+#### ネイティブ広告
+
+```html
+<amp-ad
+    width="320"
+    height="50"
+    type="zucks"
+    data-adtype="native"
+    data-frame-id="_abc123">
+</amp-ad>
+```    
 
 ###### 3. サイトにAMPタグを貼り付ける
 
