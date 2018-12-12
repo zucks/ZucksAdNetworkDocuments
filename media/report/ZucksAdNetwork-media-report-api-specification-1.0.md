@@ -1,3 +1,7 @@
+# バージョン 1.0 の廃止について
+
+バージョン 1.0 のAPIは廃止されたので [バージョン 2.0](ZucksAdNetwork-media-report-api-specification-2.0.md) をご利用ください。
+
 ![](images/Zucks_AdNetwork_380x120.png)
 
 # メディアパートナー様向け レポートAPI 仕様書
