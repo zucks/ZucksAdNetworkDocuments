@@ -11,7 +11,7 @@
 ------------------------------------------
 成果情報連携のキックバック先エンドポイントは以下のとおりです。
 
-``http://k.zucks.net/sk/``
+``https://k.zucks.net/sk/``
 
 お送りいただくパラメータ
 ------------------------
@@ -68,10 +68,10 @@ URL例
 =====
 
 purchase というコンバージョンによって800円の成果が発生した、という想定でのキックバックURL例(currencyが存在しないパターン)
-    ``http://k.zucks.net/sk/?suid=fa347d1beba237c583eb1c330355258e&cvid=purchased&price=800``
+    ``https://k.zucks.net/sk/?suid=fa347d1beba237c583eb1c330355258e&cvid=purchased&price=800``
 
 1203というコンバージョンIDによって$10の成果が発生した、という想定でのキックバックURL例
-    ``http://k.zucks.net/sk/?suid=4beabb0319a0b2927c6892f3b142f038&cvid=1203&price=10.0&currency=usd``
+    ``https://k.zucks.net/sk/?suid=4beabb0319a0b2927c6892f3b142f038&cvid=1203&price=10.0&currency=usd``
 
 アプリ起動時に通知をする、という想定でのキックバックURL例(priceが存在しないパターン)
-    ``http://k.zucks.net/sk/?suid=218ad01eb01311cc9f7bb0c3ee05ee79&cvid=launched``
+    ``https://k.zucks.net/sk/?suid=218ad01eb01311cc9f7bb0c3ee05ee79&cvid=launched``
