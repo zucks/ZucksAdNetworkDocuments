@@ -47,25 +47,6 @@
 </amp-ad>
 ```    
 
-#### レコメンド
-```html
-<amp-ad width="320" height="600"
-      type="zucks"
-      data-adtype="zoe"
-      data-frame-id="_abc123">
-</amp-ad>
-```
-
-##### マルチアド
-```html
-<amp-ad width="320" height="600"
-      type="zucks"
-      data-adtype="zoe"
-      data-frame-id="_abc123"
-      data-zoe-multi-ad="true">
-</amp-ad>
-```
-
 ###### 3. サイトにAMPタグを貼り付ける
 
 詳細はこちら：https://www.ampproject.org/docs/reference/amp-ad.html
