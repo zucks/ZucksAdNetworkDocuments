@@ -66,7 +66,7 @@ Zucks Ad Serverから、JSON文字列を返します。
 
 画像バナー広告のときに返されます:
 
-* image_src: URL. Banner image src.
+* img_src: URL. Banner image src.
   * 画像サイズは、予め入稿いただいた枠サイズに合わせたものが配信されます
 * landing_url: URL.
   * 広告タップ時の遷移先URL
@@ -103,7 +103,7 @@ Img ad:
 {
     "status": "ok",
     "type": "img",
-    "image_src": "http://static.zucks.net.zimg.jp/image/2014/10/28/135005_\u738b\u5bae_320\u00d750(L)_072.jpg.jpeg",
+    "img_src": "http://static.zucks.net.zimg.jp/image/2014/10/28/135005_\u738b\u5bae_320\u00d750(L)_072.jpg.jpeg",
     "imp_url": "http://k.zucks.net/...",
     "landing_url": "http://k.zucks.net/..."
 }
@@ -128,8 +128,8 @@ HTML ad:
 
 ### Img ad
 
-`image_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。そのURLから画像を取得し、内容を表示してください。
-`image_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
+`img_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。そのURLから画像を取得し、内容を表示してください。
+`img_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
 
 ### HTML ad
 
