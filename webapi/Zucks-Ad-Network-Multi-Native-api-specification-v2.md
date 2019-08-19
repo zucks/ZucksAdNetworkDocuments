@@ -71,7 +71,7 @@ JSON文字列を返却します。文字コードはUTF-8となります。
     * `native`
   * `imp_url` : String
     * インプレッション計測用エンドポイント
-  * `image_src` : String
+  * `img_src` : String
     * 広告画像URL
     * 縦横比を保って表示してください
   * `width` : String
@@ -133,7 +133,7 @@ https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
         {
             "type": "native",
             "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
+            "img_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
             "width": "114",
             "height": "114",
             "title": "【広告タイトル1】",
@@ -146,7 +146,7 @@ https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
         {
             "type": "native",
             "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-            "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
+            "img_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
             "width": "114",
             "height": "114",
             "title": "【広告タイトル2】",
@@ -172,9 +172,9 @@ https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
 
 ## Rendering the Ads
 
-`image_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。  
+`img_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。  
 このURLから画像を取得し、縦横比を保った状態で表示してください。  
-`image_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
+`img_src` の画像ファイルの内容は不変です。必要に応じてキャッシュして利用することができます。
 
 `link_button_text` はリンクボタン設置時に利用することができるテキストです。  
 広告によっては空文字の場合があります。
@@ -185,7 +185,7 @@ https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-
 
 ### Rendering Sample
 
-1. 広告画像（`image_src`）
+1. 広告画像（`img_src`）
 2. タイトル（`title`）
 3. 広告の本文（`body_text`）
 4. サービス・商品名（`product_name`）
