@@ -1,9 +1,9 @@
-# Zucks Ad Network Native Ad API v3.0 Specification
-
+# Zucks Ad Network Multi Native Ad API v3.0 Specification
+ネイティブ広告を複数件返却するAPIの仕様書となります。
 ## Request
 
 * End point
-  * `https://sh.zucks.net/opt/native/api/v3`
+  * `https://sh.zucks.net/opt/native/api/v3m`
 * Method
   * GET
 
@@ -26,6 +26,9 @@
 * `frameid` : Required.
   * 広告枠毎に発行されるFrame ID
   * Zucks Ad Network管理画面のメディア/広告枠管理ページよりご確認ください
+* `num` : Required.
+  * 広告要求数。1～5。
+  * 指定された要求数分広告案件が存在しない場合、存在する数だけ返却します
 * `ida` : Optional.
   * IDFA(iOS) or Advertising ID(Android)
   * Parameter `ida` を送信する場合、必ず後述のParameter `lat` を同時に送る必要があります
@@ -60,56 +63,57 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 
 * `status` : String
   * `ok`
-* `type` : String
-  * `native`
-* `imp_url` : String
-  * インプレッション計測用エンドポイント
-* `image_src` : String
-  * 広告画像URL
-  * 縦横比を保って表示してください
-* `width` : String
-  * 広告画像の横幅
-* `height` : String
-  * 広告画像の高さ
-* `title` : String
-  * 広告タイトル
-  * 全角1～18文字（半角1～36文字）の文字列
-* `body_text` : String
-  * 広告の本文
-  * 全角1～44文字（半角1～88文字）の文字列
-* `product_name` : String
-  * サービス・商品名
-  * 全角1～18文字（半角1～36文字）の文字列
-* `advertiser_name` : String
-  * 広告主名
-  * 全角1～18文字（半角1～36文字）の文字列
-* `link_button_text` : String
-  * リンクボタン設置時のテキスト
-  * 全角0～7文字（半角0～14文字）の文字列
-* `landing_url` : String
-  * 広告タップ時の遷移先URL
-* `extra_html_tag`: String (Option)
-  * 計測用のHTMLタグです。
-* `information_icon` : Array (Option)
+* `ads` : Array
+  * `type` : String
+    * `native`
+  * `imp_url` : String
+    * インプレッション計測用エンドポイント
   * `image_src` : String
-     * インフォメーションアイコンの画像URLです。
+    * 広告画像URL
+    * 縦横比を保って表示してください
   * `width` : String
-     * インフォメーションアイコン画像の幅です。
+    * 広告画像の横幅
   * `height` : String
-     * インフォメーションアイコン画像の高さです。
-  * `link_url` : String
-     * インフォメーションアイコン画像のリンクURLです。
+    * 広告画像の高さ
+  * `title` : String
+    * 広告タイトル
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `body_text` : String
+    * 広告の本文
+    * 全角1～44文字（半角1～88文字）の文字列
+  * `product_name` : String
+    * サービス・商品名
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `advertiser_name` : String
+    * 広告主名
+    * 全角1～18文字（半角1～36文字）の文字列
+  * `link_button_text` : String
+    * リンクボタン設置時のテキスト
+    * 全角0～7文字（半角0～14文字）の文字列
+  * `landing_url` : String
+    * 広告タップ時の遷移先URL
+  * `extra_html_tag`: String (Option)
+    * 計測用のHTMLタグです。
+  * `information_icon` : Array (Option)
+    * `image_src` : String
+      * インフォメーションアイコンの画像URLです。
+    * `width` : String
+      * インフォメーションアイコン画像の幅です。
+    * `height` : String
+      * インフォメーションアイコン画像の高さです。
+    * `link_url` : String
+      * インフォメーションアイコン画像のリンクURLです。
 
 #### 広告案件が存在しない場合
 
 * `status` : String
   * `no_ad`
-* `imp_url` : String
+* `no_ad_url` : String
   * 広告在庫切れ計測用エンドポイント
 
 広告案件が存在しない場合でも、HTTPステータスコードは200で返却します。
 
-`imp_url` 値を後述 Firing Impressions に従って処理することで、「配信する広告案件が存在しなかった」数としてカウントします。
+`no_ad_url` 値を後述 Firing Impressions に従って処理することで、「配信する広告案件が存在しなかった」数としてカウントします。
 
 ### その他
 
@@ -123,7 +127,7 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 ### Request
 
 ```
-https://sh.zucks.net/opt/native/api/v3?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ip=1.66.96.0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2010_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F602.1.50%20%28KHTML%2C%20like%20Gecko%29%20Version%2F10.0%20Mobile%2F14A345%20Safari%2F602.1&ref=http%3A%2F%2Fexample.com&lang=ja
+https://sh.zucks.net/opt/native/api/v3m?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ip=1.66.96.0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2010_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F602.1.50%20%28KHTML%2C%20like%20Gecko%29%20Version%2F10.0%20Mobile%2F14A345%20Safari%2F602.1&ref=http%3A%2F%2Fexample.com&lang=ja
 ```
 
 ### Response
@@ -133,24 +137,42 @@ https://sh.zucks.net/opt/native/api/v3?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
 ```json
 {
     "status": "ok",
-    "type": "native",
-    "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-    "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
-    "width": "114",
-    "height": "114",
-    "title": "【ネイティブ広告のタイトル】",
-    "body_text": "【ネイティブ広告の本文】",
-    "product_name": "【サービス・商品名】",
-    "advertiser_name": "【広告主名】",
-    "link_button_text": "【リンクボタン設置時のテキスト】",
-    "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
-    "extra_html_tag": "<img src=\"https://...\" style=\"display:none\"/>",
-    "information_icon": {
-       "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fi\u002Ficon.png",
-       "width": "30",
-       "height": "30",
-       "link_url": "https:\u002F\u002Fzucks.co.jp\u002Fprivacy\u002Fads...."
-    },
+    "ads": [
+        {
+            "type": "native",
+            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
+            "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
+            "width": "114",
+            "height": "114",
+            "title": "【広告タイトル1】",
+            "body_text": "【広告の本文1】",
+            "product_name": "【サービス・商品名1】",
+            "advertiser_name": "【広告主名1】",
+            "link_button_text": "【リンクボタン設置時のテキスト1】",
+            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
+            "extra_html_tag": "\u003Cimg src=\"https:\u002F\u002F...\" style=\"display:none\" \u002F\u003E",
+            "information_icon": {
+               "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fi\u002Ficon.png",
+               "width": "30",
+               "height": "30",
+               "link_url": "https:\u002F\u002Fzucks.co.jp\u002Fprivacy\u002Fads...."
+            },
+        },
+        {
+            "type": "native",
+            "imp_url": "https:\u002F\u002Fk.zucks.net\u002F...",
+            "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fimage\u002F...",
+            "width": "114",
+            "height": "114",
+            "title": "【広告タイトル2】",
+            "body_text": "【広告の本文2】",
+            "product_name": "【サービス・商品名2】",
+            "advertiser_name": "【広告主名2】",
+            "link_button_text": "【リンクボタン設置時のテキスト2】",
+            "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
+            "extra_html_tag": "\u003Cimg src=\"https:\u002F\u002F...\" style=\"display:none\" \u002F\u003E"
+        }
+    ]
 }
 ```
 
@@ -159,12 +181,11 @@ https://sh.zucks.net/opt/native/api/v3?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
 ```json
 {
     "status": "no_ad",
-    "imp_url": "https:\u002F\u002Fk.zucks.net\u002F..."
+    "no_ad_url": "https:\u002F\u002Fk.zucks.net\u002F..."
 }
 ```
 
-
-## Rendering the Ad
+## Rendering the Ads
 
 `image_src` は、png/jpg/gif(アニメーション含む)などの画像ファイルを示すURLです。
 このURLから画像を取得し、縦横比を保った状態で表示してください。
@@ -180,6 +201,8 @@ https://sh.zucks.net/opt/native/api/v3?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
 `information_icon` が存在する場合は必ずレンダリングしてください。
 インフォメーションアイコンのリンク先は `link_url` にしてください。
 また、インフォメーションアイコンは縦横比を保った状態で表示してください。
+
+広告在庫状況によって、要求数分の広告が返却されない場合があります。
 
 ### Rendering Sample
 
@@ -249,4 +272,6 @@ Zucks Ad Networkでは、ビーコン送信によりインプレッションを�
 - [ ] `landing_url` 値のURLにリクエストを発行していますか？
 - [ ] そのレスポンスは `302 Moved Temporarily` ですか？
 - [ ] 管理画面上のレポーティングには多少のタイムラグがあります。しばらく時間をおいて確認してみてください。
+
+
 
