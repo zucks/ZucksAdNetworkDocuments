@@ -91,7 +91,7 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 * `extra_html_tag`: String (Option)
   * 計測用のHTMLタグです。
 * `information_icon` : Array (Option)
-  * `image_url` : String
+  * `image_src` : String
      * インフォメーションアイコンの画像URLです。
   * `width` : String
      * インフォメーションアイコン画像の幅です。
@@ -146,7 +146,7 @@ https://sh.zucks.net/opt/native/api/v3?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
     "landing_url": "https:\u002F\u002Fk.zucks.net\u002F...",
     "extra_html_tag": "<img src=\"https://...\" style=\"display:none\"/>",
     "information_icon": {
-       "image_url": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fi\u002Ficon.png",
+       "image_src": "https:\u002F\u002Fstatic.zucks.net.zimg.jp\u002Fi\u002Ficon.png",
        "width": "30",
        "height": "30",
        "link_url": "https:\u002F\u002Fzucks.co.jp\u002Fprivacy\u002Fads...."
