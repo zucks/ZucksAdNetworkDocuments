@@ -28,6 +28,7 @@
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は配信されません
 * ida: String, Optional.
   * IDFA(iOS) or Advertising ID(Android)
+  * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
 * lat: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1

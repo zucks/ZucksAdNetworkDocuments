@@ -36,6 +36,7 @@
   * 指定された要求数分広告案件が存在しない場合、存在する数だけ返却します
 * `ida` : Optional.
   * IDFA(iOS) or Advertising ID(Android)
+  * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
 * `lat` : Optional.
   * 「広告トラッキング制限」が無効な場合: `0`
   * 「広告トラッキング制限」が有効な場合: `1`
