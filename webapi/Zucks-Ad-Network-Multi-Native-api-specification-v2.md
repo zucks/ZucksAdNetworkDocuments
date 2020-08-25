@@ -34,8 +34,6 @@
   * 指定された要求数分広告案件が存在しない場合、存在する数だけ返却します
 * `ida` : Optional.
   * IDFA(iOS) or Advertising ID(Android)
-  * Parameter `ida` を送信する場合、必ず後述のParameter `lat` を同時に送る必要があります
-  * Parameter `ida` が指定されていて、Parameter `lat` がない場合、必ず HTTP Status `406 Not Acceptable` を返し、広告は配信されません
 * `lat` : Optional.
   * 「広告トラッキング制限」が無効な場合: `0`
   * 「広告トラッキング制限」が有効な場合: `1`
