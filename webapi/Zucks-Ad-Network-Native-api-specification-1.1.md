@@ -25,9 +25,9 @@
 ### Request Parameters:
 * frameid: String, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
-* ida: IDFA(iOS) or Advertising ID(Android), Optional.
-  * ida パラメータを送信する場合、必ず、 lat パラメータを同時に送る必要があります。
-  * ida パラメータが指定されていて、lat パラメータがない場合、必ず HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+* ida: String, Optional.
+  * IDFA(iOS) or Advertising ID(Android)
+  * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
 * lat: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1

@@ -28,8 +28,7 @@
   * Zucks Ad Network管理画面のメディア/広告枠管理ページよりご確認ください
 * `ida` : Optional.
   * IDFA(iOS) or Advertising ID(Android)
-  * Parameter `ida` を送信する場合、必ず後述のParameter `lat` を同時に送る必要があります
-  * Parameter `ida` が指定されていて、Parameter `lat` がない場合、必ず HTTP Status `406 Not Acceptable` を返し、広告は配信されません
+  * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
 * `lat` : Optional.
   * 「広告トラッキング制限」が無効な場合: `0`
   * 「広告トラッキング制限」が有効な場合: `1`
