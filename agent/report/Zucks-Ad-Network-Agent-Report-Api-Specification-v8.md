@@ -99,10 +99,10 @@ UTF-8
 | 22 | string | 配信OS | iOS、 Android、 --- |
 | 23 | string | 広告サイズ | 320×50 の形式 |
 
-#### レスポンス例
+#### レスポンス例https://github.com/zucks/ZucksAdNetworkDocuments/pull/67
 
 ```
-$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v7?date=2020-11-20'
+$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v8?date=2020-11-20'
 "2020-11-20","6407.00","6179","527","204","12","12.16","1","【TEST】テストオーダーグループ","1","【TEST】テストオーダー","【TEST】テスト広告主","1","【TEST】テストキャンペーン","1","【TEST】テストクリエイティブ","https://zucks.co.jp/","1","---","","","---","320×50"
 ```
 
