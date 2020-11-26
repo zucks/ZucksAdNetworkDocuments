@@ -1,4 +1,4 @@
-# Zucks Ad Network 代理店様向けレポートAPI仕様書 v8
+# Zucks Ad Network 代理店様向けレポートAPI仕様書 v8.0
 
 作成日: 2020/11/20
 
@@ -99,7 +99,7 @@ UTF-8
 | 22 | string | 配信OS | iOS、 Android、 --- |
 | 23 | string | 広告サイズ | 320×50 の形式 |
 
-#### レスポンス例https://github.com/zucks/ZucksAdNetworkDocuments/pull/67
+#### レスポンス例
 
 ```
 $ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v8?date=2020-11-20'
