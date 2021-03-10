@@ -54,7 +54,7 @@
 下記のパラメータを必要に応じて追加してください
 
 * atts: 0 or 1 or 2 or 3, Optional.
-  * ATTrackingManager.AuthorizationStatus
+  * [ATTrackingManager.AuthorizationStatus](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanagerauthorizationstatus) に応じた値
   * notDetermined: 0, restricted: 1, denied: 2, authorized: 3
 * skadnvers[]: Optional.
   * 対応可能SKAdNetworkバージョン（端末OSバージョンや、アプリに導入済みの広告SDKバージョンによる）
@@ -64,6 +64,10 @@
   * アプリのInfo.plistに指定されているSKAdNetworkID
   * Zucks用のID（ `3qcr597p9d.skadnetwork` ）以外は送信いただかなくても問題ありません
   * 例 : `3qcr597p9d.skadnetwork`
+* sourceapp: Optional.
+  * 広告を掲載するアプリのApp Store ID
+  * Zucks Ad Network管理画面より、アプリのストアURLをご登録済みの場合は不要となります
+  * 例 : `727497959`
 
 [SKAdNetwork](https://developer.apple.com/documentation/storekit/skadnetwork)による計測に対応する場合、 `skadnvers[]` および `skadnids[]` は必須となります。また、広告掲載アプリにおいて、下記の設定を追加してください。
 
