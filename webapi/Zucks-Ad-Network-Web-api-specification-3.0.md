@@ -56,7 +56,7 @@
   * notDetermined: 0, restricted: 1, denied: 2, authorized: 3
 * skadnvers[]: Optional.
   * 対応可能SKAdNetworkバージョン（端末OSバージョンや、アプリに導入済みの広告SDKバージョンによる）
-  * **※現段階ではZucks Ad Networkではバージョン2.0のみ対応しております**
+  * **※現段階ではZucks Ad Networkではバージョン2.0, 2.1にのみ対応しております**
   * 例 : `2.0`
 * skadnids[]: Optional.
   * アプリのInfo.plistに指定されているSKAdNetworkID
