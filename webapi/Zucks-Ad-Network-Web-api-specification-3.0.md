@@ -1,6 +1,4 @@
-# Zucks Ad Network WEB API v3 Specification (Draft)
-
-**※このドキュメントはドラフト版のため、APIのEnd Pointはまだ利用できません(2021/03/04)**
+# Zucks Ad Network WEB API v3 Specification
 
 ## Request
 
