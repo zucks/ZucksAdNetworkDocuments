@@ -5,7 +5,7 @@ View-Through Ad._
 
 ## Overview figure
 
-![Overview figure](image/overview-figure-2-0.png)
+![Overview figure](image/overview-figure-2-2.png)
 
 ## Prerequisites
 
