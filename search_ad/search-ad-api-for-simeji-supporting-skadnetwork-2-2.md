@@ -72,7 +72,7 @@ When showing ads, request data that is required by SKAdNetwork by calling skadnS
 Only do this step if:
 
 - Selected campaign contains **skadnSignatureUrl**
-- User iOS device supports SKAdnetwork
+- User iOS device supports SKAdNetwork
     - https://developer.apple.com/documentation/storekit/skadnetwork/skadnetwork_release_notes
 
 #### Request
@@ -125,10 +125,10 @@ The response contains 3 fields
     - To see how to use these fields please refer
       to [SKAdNetwork documentation](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
 - impUrl
-    - You will receive impUrl from ① but for SKAdnetwork ads please use this new url instead when you show your ad to
+    - You will receive impUrl from ① but for SKAdNetwork ads please use this new url instead when you show your ad to
       measure impressions
 - clickUrl
-    - You will receive clickUrl from ① but for SKAdnetwork ads please use this new url instead when user clicks on your
+    - You will receive clickUrl from ① but for SKAdNetwork ads please use this new url instead when user clicks on your
       ad to measure clicks
 
 ##### Example SKAdNetwork 2.0-2.1

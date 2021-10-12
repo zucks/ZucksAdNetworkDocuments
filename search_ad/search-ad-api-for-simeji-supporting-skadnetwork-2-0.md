@@ -1,4 +1,4 @@
-## Zucks Search Ad API for simeji
+# Zucks Search Ad API for simeji supporting SKAdNetwork 2.0
 
 Release Date:
 
@@ -10,7 +10,7 @@ What we talked about during last meeting:
 
 ![Overview figure](image/overview-figure-2-0.png)
 
-### Prerequisites:
+## Prerequisites:
 
 - Include the Zucks network’s ID in your Info.plist
     - Zucks ad network’s ID: 3qcr597p9d.skadnetwork
@@ -19,15 +19,15 @@ What we talked about during last meeting:
 
 ![Flow chart](image/flow-chart.png)
 
-#### ① Campaign API
+### ① Campaign API
 
 - API
     - ENDPOINT: https://ms.zucksadnetwork.com/web_api/search_ad/simeji/v2
     - METHOD: GET
-    - Example：
-        ```
-        curl -H 'x-api-key:xxxxxxxxxxxxxxxx' 'https://ms.zucksadnetwork.com/web_api/search_ad/simeji/v2?frame_id=xxxxxx'
-        ``` 
+    - Example:
+      ```
+      curl -H 'x-api-key:xxxxxxxxxxxxxxxx' 'https://ms.zucksadnetwork.com/web_api/search_ad/simeji/v2?frame_id=xxxxxx'
+      ```
     - You could reuse the x-api-key from the previous version.
 - Changes:
     - A new field **skadnSignatureUrl** will be added to the response of campaign which supported SKAdNetwork.
@@ -62,13 +62,13 @@ What we talked about during last meeting:
 }
 ```
 
-#### ② When show ads, request data that is required by SKAdNetwork by calling **skadnSignatureUrl**
+### ② When show ads, request data that is required by SKAdNetwork by calling **skadnSignatureUrl**
 
 Only do this step if:
 
 - Selected campaign contains **skadnSignatureUrl**
 - User iOS device supports SKAdNetwork
-    - [https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
+    - https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads
 
 **<span style="text-decoration:underline;">Request:</span>**
 
@@ -140,12 +140,12 @@ The response contains 3 fields
     - You will receive clickUrl from ① but for SKAdNetwork ads please use this new url instead when user clicks on your
       ad to measure clicks
 
-#### ③ Provide a StoreKit-Rendered Ad from SimejiSDK
+### ③ Provide a StoreKit-Rendered Ad from SimejiSDK
 
 - This part is not under our control so we will only provide documentation for you.
-- [https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
+- https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads
 
-#### ④ Click Notification
+### ④ Click Notification
 
 - As stated in ② you will need to use the clickUrl from ② for SKAdNetwork Ads. To make sure the click request is
   redirected to our measurement partner (MMP) properly, we require you to follow the redirect. (for e.g: if you use cURL
