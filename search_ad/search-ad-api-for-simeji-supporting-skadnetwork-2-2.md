@@ -3,8 +3,6 @@
 _We propose both the StoreKit-Rendered Ad and the View-Through Ad for the future reference. You can only use the
 View-Through Ad._
 
-The parts highlighted by <span style="background-color:#5da340;">this marker</span> are the changes.
-
 ## Overview figure
 
 ![Overview figure](image/overview-figure-2-0.png)
@@ -12,8 +10,8 @@ The parts highlighted by <span style="background-color:#5da340;">this marker</sp
 ## Prerequisites
 
 - Include the Zucks network’s ID in your Info.plist
-    - Zucks ad network’s ID: 3qcr597p9d.skadnetwork
-    - [https://developer.apple.com/documentation/storekit/skadnetwork/configuring_the_participating_apps](https://developer.apple.com/documentation/storekit/skadnetwork/configuring_the_participating_apps)
+    - Zucks ad network’s ID: `3qcr597p9d.skadnetwork`
+    - https://developer.apple.com/documentation/storekit/skadnetwork/configuring_the_participating_apps
 
 ## SKAdNetwork measurement
 
@@ -31,8 +29,9 @@ The parts highlighted by <span style="background-color:#5da340;">this marker</sp
       curl -H 'x-api-key:xxxxxxxxxxxxxxxx' 'https://ms.zucksadnetwork.com/web_api/search_ad/simeji/v2?frame_id=xxxxxx'
       ```
     - You could reuse the x-api-key from the previous version.
-- If a campaign supports SKAdNetwork, the field **skadnSignatureUrl*- will be added to the response. For Android or
-  campaigns that do not support SKAdnetwork this field will not exist.
+- If a campaign supports SKAdNetwork, the field **skadnSignatureUrl** will be added to the response of campaign which
+  supported SKAdNetwork.
+    - For Android or campaigns that do not support SKAdNetwork this field will not exist.
 - Instructions on how to use this field would be written below.
 
 #### Example
@@ -72,8 +71,7 @@ When showing ads, request data that is required by SKAdNetwork by calling skadnS
 Only do this step if:
 
 - Selected campaign contains **skadnSignatureUrl**
-- User iOS device supports SKAdNetwork
-    - https://developer.apple.com/documentation/storekit/skadnetwork/skadnetwork_release_notes
+- User device's version is iOS14.0 or later
 
 #### Request
 
@@ -82,13 +80,13 @@ Only do this step if:
 - **skadnvers[]**
     - required
     - Array of strings containing the supported skadnetwork versions. We support array of string in query parameter by
-      using the syntax key[]=value
-        - For eg: "skadnvers[]=2.0&skadnvers[]=2.1"
+      using the syntax `key[]=value`
+        - For eg: `skadnvers[]=2.0&skadnvers[]=2.1`
     - Available SKAdNetwork versions and versions supported by Zucks:
         - 1.0: No
         - 2.0: Yes
-        - <span style="background-color:#5da340;">2.1: Yes</span>
-        - <span style="background-color:#5da340;">2.2: Yes</span>
+        - 2.1: Yes
+        - 2.2: Yes
         - 3.0: In the future
 - **sourceapp**
     - required
@@ -150,7 +148,7 @@ The response contains 3 fields
 }
 ```
 
-##### <span style="background-color:#5da340;">Example SKAdNetwork 2.2</span>
+##### Example SKAdNetwork 2.2
 
 ```json
 {
@@ -180,7 +178,7 @@ The response contains 3 fields
 }
 ```
 
-### ③ Provide <span style="background-color:#5da340;">a View-Through Ad or/and</span> a StoreKit-Rendered Ad from SimejiSDK
+### ③ Provide a View-Through Ad or/and a StoreKit-Rendered Ad from SimejiSDK
 
 - This part is not under our control so we will only provide documentation for you.
 - https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads

@@ -10,12 +10,15 @@ What we talked about during last meeting:
 
 ![Overview figure](image/overview-figure-2-0.png)
 
-## Prerequisites:
+## Prerequisites
 
 - Include the Zucks network’s ID in your Info.plist
-    - Zucks ad network’s ID: 3qcr597p9d.skadnetwork
+    - Zucks ad network’s ID: `3qcr597p9d.skadnetwork`
     - https://developer.apple.com/documentation/storekit/skadnetwork/configuring_the_participating_apps
-- Flow chart:
+
+## SKAdNetwork measurement
+
+### Flow chart
 
 ![Flow chart](image/flow-chart.png)
 
@@ -31,8 +34,10 @@ What we talked about during last meeting:
     - You could reuse the x-api-key from the previous version.
 - Changes:
     - A new field **skadnSignatureUrl** will be added to the response of campaign which supported SKAdNetwork.
-        - For Android or campaigns that do not support SKAdNetwork this field will not exist
-    - Instruction on how to use this field would be written below.
+        - For Android or campaigns that do not support SKAdNetwork this field will not exist.
+    - Instructions on how to use this field would be written below.
+
+#### Example
 
 ```json
 {
@@ -50,7 +55,7 @@ What we talked about during last meeting:
     },
     {
       "id": 90,
-      "appId": "com.myname.IOSApp",
+      "appId": "727497959",
       "appName": "Zucks IOS App",
       "os": "ios",
       "cpc": 20,
@@ -67,19 +72,18 @@ What we talked about during last meeting:
 Only do this step if:
 
 - Selected campaign contains **skadnSignatureUrl**
-- User iOS device supports SKAdNetwork
-    - https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads
+- User device's version is iOS14.0 or later
 
-**<span style="text-decoration:underline;">Request:</span>**
+#### Request
 
 **GET skadnSignatureUrl**
 
 - **skadnvers[]**
     - required
     - Array of strings containing the supported skadnetwork versions. We support array of string in query parameter by
-      using the syntax key[]=value
-        - For eg: "skadnvers[]=2.0&skadnvers[]=2.1"
-    - Currently we only accept 2.0, 2.1. Available SkAdNetwork versions and versions supported by Zucks:
+      using the syntax `key[]=value`
+        - For eg: `skadnvers[]=2.0&skadnvers[]=2.1`
+    - Currently we only accept 2.0, 2.1. Available SKAdNetwork versions and versions supported by Zucks:
         - 1.0: No
         - 2.0: Yes
         - 2.1: In the future
@@ -94,7 +98,7 @@ Only do this step if:
 _skadnSignatureUrl might already contain query parameters. So please append the required parameters to the end of the
 URL_
 
-Example:
+##### Example
 
 Based on the example from ①, if you selected the campaign with id: 90 then the request to get SKAdNetwork related data
 would look like:
@@ -103,12 +107,29 @@ would look like:
 GET https://sh.zucks.net/search_ad/skadn/?x=...&skadnvers[]=2.0&sourceapp=899997582
 ```
 
-**<span style="text-decoration:underline;">Response:</span>**
+#### Response
 
-Response Header:
+**Response Header**
 
 - HTTP status: 200 OK
 - Content-Type: application/json;charset=UTF-8
+
+**Response Body**
+
+The response contains 3 fields
+
+- skadn
+    - Data you need to present an ad with the ability to provide SKAdNetwork postback
+    - To see how to use these fields please refer
+      to [SKAdNetwork documentation](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
+- impUrl
+    - You will receive impUrl from ① but for SKAdNetwork ads please use this new url instead when you show your ad to
+      measure impressions
+- clickUrl
+    - You will receive clickUrl from ① but for SKAdNetwork ads please use this new url instead when user clicks on your
+      ad to measure clicks
+
+##### Example SKAdNetwork 2.0-2.1
 
 ```json
 {
@@ -126,19 +147,6 @@ Response Header:
   "clickUrl": "https://k.zucks.net/rd/?x=..."
 }
 ```
-
-The response contains 3 fields
-
-- skadn
-    - Data you need to present an ad with the ability to provide SKAdNetwork postback
-    - To see how to use these fields please refer
-      to [SKAdNetwork documentation](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
-- impUrl
-    - You will receive impUrl from ① but for SKAdNetwork ads please use this new url instead when you show your ad to
-      measure impressions
-- clickUrl
-    - You will receive clickUrl from ① but for SKAdNetwork ads please use this new url instead when user clicks on your
-      ad to measure clicks
 
 ### ③ Provide a StoreKit-Rendered Ad from SimejiSDK
 
