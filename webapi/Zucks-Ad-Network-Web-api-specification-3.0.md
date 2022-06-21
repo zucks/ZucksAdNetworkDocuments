@@ -7,7 +7,7 @@
 * Method
   * GET
 
-### Request Headers:
+### Request Headers
 
 * User-Agent: Required.
   * デフォルトブラウザと同等のものを送信してください
@@ -23,7 +23,7 @@
     * XMLHttpRequest: `withCredentials` プロパティを `true` に設定
 
 
-### Request Parameters:
+### Request Parameters
 
 * frameid: Requierd.
   * 管理画面より作成いただいた広告枠ID
@@ -56,8 +56,8 @@
   * notDetermined: 0, restricted: 1, denied: 2, authorized: 3
 * skadnvers[]: Optional.
   * 対応可能SKAdNetworkバージョン（端末OSバージョンや、アプリに導入済みの広告SDKバージョンによる）
-  * **※現段階ではZucks Ad Networkではバージョン2.0, 2.1にのみ対応しております**
-  * 例 : `2.0`
+  * **※現段階ではZucks Ad Networkではバージョン2.0, 2.1, 2.2に対応しております**
+  * 例 : `2.2`
 * skadnids[]: Optional.
   * アプリのInfo.plistに指定されているSKAdNetworkID
   * Zucks用のID（ `3qcr597p9d.skadnetwork` ）以外は送信いただかなくても問題ありません
@@ -114,6 +114,33 @@ HTML広告のときに返却される項目
 
 iOS14以降でSKAdNetwork計測に対応した広告の場合に返却される項目
 
+##### SKAdNetwork2.2以降の場合
+
+* version: String
+  * 配信時に利用するSKAdNetwrokバージョン
+* network: String
+  * SKAdNetworkID
+* campaign: Integer
+  * SKAdNetworkキャンペーンID
+* sourceapp: Integer
+  * 広告掲載アプリID
+* itunesitem: Integer
+  * 広告主アプリID
+* fidelities: array
+  * Fidelity Typeごとの計測用パラメータ
+    * fidelity: Integer
+      * SKAdNetworkのFidelity Type
+        * 1: StoreKit-Rendered Ads
+        * 0: View-Through Ads
+    * nonce: String
+      * 広告配信毎のユニーク値（UUID形式）
+    * signature: String
+      * 署名文字列
+    * timestamp: Integer
+      * タイムスタンプ（ミリ秒）
+
+##### SKAdNetwork2.1以前の場合
+
 * version: String
   * 配信時に利用するSKAdNetwrokバージョン
 * network: String
@@ -151,7 +178,7 @@ https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234
 SKAdNetwork計測に対応している場合
 
 ```
-https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.0&skadnids%5B%5D=3qcr597p9d.skadnetwork
+https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
 ```
 
 ### Response
@@ -189,14 +216,25 @@ Img ad - SKAdNetwork計測に対応:
     "imp_url": "https://k.zucks.net/...",
     "landing_url": "https://k.zucks.net/...",
     "skadn": {
-        "version": "2.0",
+        "version": "2.2",
         "network": "3qcr597p9d.skadnetwork",
         "campaign": 1,
         "sourceapp": 525463029,
         "itunesitem": 727497959,
-        "nonce": "6aafb7a5-0170-41b5-bbe4-fe71dedf1e28",
-        "signature": "MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==",
-        "timestamp": 1611555668665
+        "fidelities": [
+            {
+                "fidelity": 0,
+                "nonce": "271ad367-af41-8fcf-d958-411b2fbb0e05",
+                "signature": "MEQCIAh8FmnrCY8g4kIhgejdFFcvqwkZV/PGjiuYyhulbZzlAiBTNp+iPZXXhhXXmpee4MmWh+eWTFypDN96YoBUCpdcKQ==",
+                "timestamp": 1611555668665
+            },
+            {
+                "fidelity": 1,
+                "nonce": "6aafb7a5-0170-41b5-bbe4-fe71dedf1e28",
+                "signature": "MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==",
+                "timestamp": 1611555668665
+            }
+        ]
     }
 }
 ```
@@ -210,14 +248,25 @@ HTML ad - SKAdNetwork計測に対応:
     "html": "<div><a href='...'>...</div>",
     "imp_url": "https://k.zucks.net/...",
     "skadn": {
-        "version": "2.0",
+        "version": "2.2",
         "network": "3qcr597p9d.skadnetwork",
         "campaign": 1,
         "sourceapp": 525463029,
         "itunesitem": 727497959,
-        "nonce": "6aafb7a5-0170-41b5-bbe4-fe71dedf1e28",
-        "signature": "MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==",
-        "timestamp": 1611555668665
+        "fidelities": [
+            {
+                "fidelity": 0,
+                "nonce": "271ad367-af41-8fcf-d958-411b2fbb0e05",
+                "signature": "MEQCIAh8FmnrCY8g4kIhgejdFFcvqwkZV/PGjiuYyhulbZzlAiBTNp+iPZXXhhXXmpee4MmWh+eWTFypDN96YoBUCpdcKQ==",
+                "timestamp": 1611555668665
+            },
+            {
+                "fidelity": 1,
+                "nonce": "6aafb7a5-0170-41b5-bbe4-fe71dedf1e28",
+                "signature": "MEQCIEQlmZRNfYzKBSE8QnhLTIHZZZWCFgZpRqRxHss65KoFAiAJgJKjdrWdkLUOCCjuEx2RmFS7daRzSVZRVZ8RyMyUXg==",
+                "timestamp": 1611555668665
+            }
+        ]
     }
 }
 ```
@@ -252,6 +301,12 @@ Img ad, HTML adともに、広告領域をレンダリングした直後、 `imp
   * Fetch API: `credentials` オプションを `include` に設定
   * XMLHttpRequest: `withCredentials` プロパティを `true` に設定
 
+### SKAdNetwork計測に対応した広告の場合（SKAdNetwork2.2以降のView-through Ad）
+
+`skadn` 内の情報を元に、Apple公式の手順通り、SKAdImpressionも呼び出してください。 `fidelity` が0のものを利用してください。
+
+* [Signing and Providing Ads](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
+
 
 ## Firing Clicks
 
@@ -265,9 +320,9 @@ Img ad, HTML adともに、広告領域をレンダリングした直後、 `imp
 
 ### SKAdNetwork計測に対応した広告の場合
 
-`skadn` 内の情報を元に、Apple公式の手順通り、StoreKitの表示を行ってください。
+`skadn` 内の情報を元に、Apple公式の手順通り、StoreKitの表示を行ってください。SKAdNetwork2.2以降の場合、 `fidelity` が1のものを利用してください。
 
-* [Provide a StoreKit-Rendered Ad](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
+* [Signing and Providing Ads](https://developer.apple.com/documentation/storekit/skadnetwork/signing_and_providing_ads)
 
 またレポート集計のために、本来の遷移先URLに対してもバックグラウンドで通知を行うようにしてください。この際リダイレクトは追従するようにしてください。
 
