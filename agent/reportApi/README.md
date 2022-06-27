@@ -6,14 +6,8 @@
 
 Zucks Ad Networkのレポートを日単位で取得するAPIです。  
 
-### v7からの変更点
+過去の更新履歴は[CHANGELOG](./CHANGELOG.md)をご確認ください。
 
-* URLが変わりました
-    * v7: https://ms.zucksadnetwork.com/web_api/agent/report/v7
-    * v8: https://ms.zucksadnetwork.com/web_api/agent/report/v8
-* 項目が追加されました
-    * ` 8: オーダーグループID `
-    * ` 9: オーダーグループ名 `    
 
 # レポートAPI仕様
 

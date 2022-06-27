@@ -2,17 +2,12 @@
 
 作成日: 2017/07/24
 
+こちらは過去のバージョンになります。最新版は[こちら](../)からご確認ください。
+
 ### 概要
 
 Zucks Ad Networkのレポートを日単位で取得するAPIです。  
 
-### v6からの変更点
-
-* URLが変わりました
-    * v6: https://ms.zucksadnetwork.com/web_api/agent/report/v6
-    * v7: https://ms.zucksadnetwork.com/web_api/agent/report/v7
-* 項目が追加されました
-    * ` 6: VTCV数 `
 
 # レポートAPI仕様
 
