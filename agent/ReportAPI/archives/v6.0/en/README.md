@@ -1,5 +1,7 @@
 # Zucks Ad Network Report API Specification v6 for Advertising Agency
 
+This is an older version. Please check the latest version [here](../../).
+
 ### Overview
 
 This describes the resources that make up the official Zucks Ad Network Report API v6.
