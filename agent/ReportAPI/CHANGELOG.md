@@ -9,7 +9,7 @@
     * v8: https://ms.zucksadnetwork.com/web_api/agent/report/v8
 * 以下の項目が追加されました
     * `8: オーダーグループID`
-    * `9: オーダーグループ名`    
+    * `9: オーダーグループ名`
 
 ## [v7](./archives/v7/)
 
