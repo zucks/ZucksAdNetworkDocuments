@@ -1,6 +1,8 @@
 # Zucks Ad Network 代理店様向けレポートAPI更新履歴
 
-## v8.0
+## v8
+
+リリース日 : 2020/11/20
 
 * エンドポイントの変更
     * v7: https://ms.zucksadnetwork.com/web_api/agent/report/v7
@@ -9,7 +11,9 @@
     * `8: オーダーグループID`
     * `9: オーダーグループ名`    
 
-## [v7.0](./archives/v7.0/)
+## [v7](./archives/v7/)
+
+リリース日 : 2017/07/24
 
 * APIエンドポイントの変更
     * v6: https://ms.zucksadnetwork.com/web_api/agent/report/v6
@@ -17,7 +21,9 @@
 * 以下の項目が追加されました
     * `6: VTCV数`
 
-## [v6.0](./archives/v6.0/)
+## [v6](./archives/v6/)
+
+リリース日 : 2017/05/01
 
 * APIエンドポイントの変更
     * v5: https://ms.zucksadnetwork.com/api/report2/agent/v5/csv/{year}/{month}/{day}/report.csv
