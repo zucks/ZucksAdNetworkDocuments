@@ -35,7 +35,7 @@ S3での自動更新を利用される場合は、弊社担当者にご連絡く
     ```
 
 1. IDFAリストグループを用意する
-    * https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/README.md
+    * https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/agent/IDAListAPI/
 1. S3にidaリストファイルをアップロードする
     * アップロードしたidaリストファイルから`IDFAリスト`が作成されます
       * アップロードしたidaリストファイルの名前が生成されるIDFAリストの名前になります
@@ -46,7 +46,7 @@ S3での自動更新を利用される場合は、弊社担当者にご連絡く
 
 * IDFAリストグループを作成後、そのidaリストを配信で使えるよう取り込み処理が走ります
   * idaリストファイルのサイズ等にもよりますがidaリストの取り込みには数分から数時間かかります
-    * 取り込み状況の確認は[API](https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/README.md#idaリストグループのステータス確認)から確認できます
+    * 取り込み状況の確認は[API](https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/agent/IDAListAPI/README.md#idaリストグループのステータス確認)から確認できます
 
 #### 用語
 

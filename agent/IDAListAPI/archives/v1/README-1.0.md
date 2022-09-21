@@ -1,4 +1,6 @@
-# IDFA/AdID リストアップロード API 仕様書
+# Zucks Ad Network 代理店向けIDFA/AdID リストアップロード API 仕様書 v1.0
+
+リリース日: 2015/10/29
 
 ## 概要
 
