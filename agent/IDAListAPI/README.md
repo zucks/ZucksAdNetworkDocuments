@@ -27,7 +27,7 @@ Zucks AdNetwork では以下のAPIを提供します。
 ## 準備
 
 * Zucks AdNetwork idaリスト用 APIキー
-  * 不明な場合は Zucks 担当者にご確認ください
+  * 代理店管理画面のAPIキーメニューから発行ができます
 
 ## 全ての機能で共通の仕様
 
