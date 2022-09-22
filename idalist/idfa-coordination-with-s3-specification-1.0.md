@@ -12,15 +12,15 @@ S3での自動更新を利用される場合は、弊社担当者にご連絡く
 
 * 発行されたIAMユーザーで用意されたアップロード先S3にアクセスできることを確認してください
 * アップロードするパスの形式
-    * `s3://zucks-advertisers-idfas/(代理店専用のプレフィックス)/advertisers/(広告主ID)/idfa-list-groups/(IDFAリストグループID)/(idaリストファイル)`
-    * 広告主IDは[Zucks Ad Network管理画面](https://ms.zucksadnetwork.com/agent)の広告主一覧ページ(`https://ms.zucksadnetwork.com/agent/<agent_id>/company/advertiser/list`)で確認ください
+  * `s3://zucks-advertisers-idfas/(代理店専用のプレフィックス)/advertisers/(広告主ID)/idfa-list-groups/(IDFAリストグループID)/(idaリストファイル)`
+  * 広告主IDは[Zucks Ad Network管理画面](https://ms.zucksadnetwork.com/agent)の広告主一覧ページ(`https://ms.zucksadnetwork.com/agent/<agent_id>/company/advertiser/list`)で確認ください
 
 ## 連携手順
 
 1. idaリストファイルを用意する
     * 1行に1つのidaを指定してください
 
-   例:
+    例:
 
     ```
     $ cat idfa-list-upload-test.txt
@@ -37,15 +37,15 @@ S3での自動更新を利用される場合は、弊社担当者にご連絡く
     * https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/ida-list-api-specification-2.0.md
 1. S3にidaリストファイルをアップロードする
     * アップロードしたidaリストファイルから`IDFAリスト`が作成されます
-        * アップロードしたidaリストファイルの名前が生成されるIDFAリストの名前になります
-        * idaリストファイル名にマルチバイト文字列は使用できません
+      * アップロードしたidaリストファイルの名前が生成されるIDFAリストの名前になります
+      * idaリストファイル名にマルチバイト文字列は使用できません
     * 作成されたIDFAリストはアップロードしたs3オブジェクトのパス(キー)に含まれるIDFAリストグループIDの`IDFAリストグループ`に紐づけられます
 
 #### その他補足
 
 * IDFAリストグループを作成後、そのidaリストを配信で使えるよう取り込み処理が走ります
-    * idaリストファイルのサイズ等にもよりますがidaリストの取り込みには数分から数時間かかります
-        * 取り込み状況の確認は[API](https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/ida-list-api-specification-2.0.md#idaリストグループのステータス確認)から確認できます
+  * idaリストファイルのサイズ等にもよりますがidaリストの取り込みには数分から数時間かかります
+    * 取り込み状況の確認は[API](https://github.com/zucks/ZucksAdNetworkDocuments/blob/master/idalist/ida-list-api-specification-2.0.md#idaリストグループのステータス確認)から確認できます
 
 #### 用語
 
