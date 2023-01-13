@@ -38,6 +38,20 @@
 * ua: String, Optional.
   * デフォルトブラウザと同等のUserAgent文字列
   * 末尾に独自の付加情報が追加されていても、許容されます
+* chm: String, Optional.
+  * ブラウザのユーザエージェントクライアントAPI機能(以下, Client Hint)によって取得できる端末モデル名
+    * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
+  * Client Hintにより端末名が取得できた場合: 取得した文字列
+  * Client Hintにより端末名の取得をリクエストしたが拒否された場合: `-`
+  * ブラウザがClient Hintに対応していない場合: パラメータなし
+  * [JavaScript参考実装](#ClientHint)
+* chpv: String, Optional.
+  * ブラウザのユーザエージェントクライアントAPI機能(以下, Client Hint)によって取得できるプラットフォームバージョン(OSバージョン)
+    * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
+  * Client Hintによりプラットフォームバージョンが取得できた場合: 取得した文字列
+  * Client Hintによりプラットフォームバージョンの取得をリクエストしたが拒否された場合: `-`
+  * ブラウザがClient Hintに対応していない場合: パラメータなし
+  * [JavaScript参考実装](#ClientHint)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
@@ -46,6 +60,27 @@
 * ip: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
+    
+#### ClientHint
+JavaScriptのユーザエージェントクライアントAPI機能を用いてモデル、プラットフォームバージョンを取得する例
+```javascript
+new Promise((resolve) => {
+  if(!navigator.userAgentData) resolve({});
+
+  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+    resolve(uaData);
+  }).catch(() => {
+    const uaData = {
+      "model": "-",
+      "platformVersion": "-"
+    }
+    resolve(uaData);
+  });
+}).then((uaData) => {
+  // request to https://sh.zucks.net/opt/api/v3 with parameters
+});
+```
+注: ES6対応ブラウザでの動作が必要です
 
 #### iOS14以降のアプリ面配信の場合
 
