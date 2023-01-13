@@ -43,14 +43,14 @@
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
   * Client Hintにより端末名が取得できた場合: 取得した文字列
   * 端末名の取得をリクエストしたがClient Hintにより拒否された場合: `-`
-  * ブラウザがClient Hintに対応していない場合: パラメータなし
+  * ブラウザがClient Hintに対応していない場合: クエリパラメータ付与は不要
   * [JavaScript参考実装](#ClientHint)
 * chpv: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できるプラットフォームバージョン(OSバージョン)
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
   * Client Hintによりプラットフォームバージョンが取得できた場合: 取得した文字列
   * プラットフォームバージョンの取得をリクエストしたがClient Hintにより拒否された場合: `-`
-  * ブラウザがClient Hintに対応していない場合: パラメータなし
+  * ブラウザがClient Hintに対応していない場合: クエリパラメータ付与は不要
   * [JavaScript参考実装](#ClientHint)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
