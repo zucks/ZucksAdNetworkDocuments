@@ -41,17 +41,11 @@
 * chm: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できる端末モデル名
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * Client Hintにより端末名が取得できた場合: 取得した文字列
-  * ブラウザがClient Hintに対応していない場合, もしくはブラウザによりヒントの取得を拒否された場合: クエリパラメータ付与は不要
   * [JavaScript参考実装](#ClientHint)
-  * 注: このパラメータが不足していると、端末のターゲティングができない場合があります
 * chpv: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できるプラットフォームバージョン(OSバージョン)
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * Client Hintによりプラットフォームバージョンが取得できた場合: 取得した文字列
-  * ブラウザがClient Hintに対応していない場合, もしくはブラウザによりヒントの取得を拒否された場合: クエリパラメータ付与は不要
   * [JavaScript参考実装](#ClientHint)
-  * 注: このパラメータが不足していると、端末のターゲティングができない場合があります
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
@@ -64,17 +58,11 @@
 #### ClientHint
 JavaScriptのClient Hint機能を用いてモデル、プラットフォームバージョンを取得する例
 ```javascript
-new Promise((resolve) => {
-  if(!navigator.userAgentData) resolve({});
-
-  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
-    resolve(uaData);
-  }).catch(() => {
-    resolve({});
-  });
-}).then((uaData) => {
-  // request to https://sh.zucks.net/opt/api/v3 with parameters
-});
+if(navigator.userAgentData){
+      navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+            //取得したUA情報の処理
+      });
+}
 ```
 注: ES6対応ブラウザでの動作が必要です
 
