@@ -38,6 +38,12 @@
 * ua: String, Optional.
   * デフォルトブラウザと同等のUserAgent文字列
   * 末尾に独自の付加情報が追加されていても、許容されます
+* chm: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
+  * [Client Hintsの取得](#Client-Hintsの取得)
+* chpv: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
+  * [Client Hintsの取得](#Client-Hintsの取得)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
@@ -46,6 +52,20 @@
 * ip: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
+
+#### Client Hintsの取得
+[UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
+```javascript
+if(navigator.userAgentData){
+  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+    //取得したUA情報の処理
+  });
+}
+```
+参考: [API Reference](https://developer.mozilla.org/ja/docs/Web/API/NavigatorUAData/getHighEntropyValues)
+
+[HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
+
 
 #### iOS14以降のアプリ面配信の場合
 
