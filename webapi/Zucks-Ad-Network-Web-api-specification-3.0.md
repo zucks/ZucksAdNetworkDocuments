@@ -40,12 +40,10 @@
   * 末尾に独自の付加情報が追加されていても、許容されます
 * chm: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できる端末モデル名
-    * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * [ClientHintについて](#ClientHint)
+  * [ClientHintの取得](#ClientHint)
 * chpv: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できるプラットフォームバージョン(OSバージョン)
-    * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * [ClientHintについて](#ClientHint)
+  * [ClientHintの取得](#ClientHint)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
@@ -54,9 +52,9 @@
 * ip: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
-    
-#### ClientHint
-JavaScriptのClient Hint機能を用いてモデル、プラットフォームバージョンを取得する例
+
+#### ClientHintの取得
+[UserAgent ClientHint API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
 ```javascript
 if(navigator.userAgentData){
   navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
@@ -68,9 +66,8 @@ if(navigator.userAgentData){
 
 注: ES6対応ブラウザでの動作が必要です
 
-HTTPヘッダーによるClientHintの取得も可能です
+[HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClientHintの取得も可能です
 
-参考: [HTTP Client Hint](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints)
 
 #### iOS14以降のアプリ面配信の場合
 
