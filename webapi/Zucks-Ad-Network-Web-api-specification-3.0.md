@@ -40,10 +40,10 @@
   * 末尾に独自の付加情報が追加されていても、許容されます
 * chm: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
-  * [Client Hintsの取得](#ClientHintsの取得)
+  * [Client Hintsの取得](#Client-Hintsの取得)
 * chpv: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
-  * [Client Hintsの取得](#ClientHintsの取得)
+  * [Client Hintsの取得](#Client-Hintsの取得)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
