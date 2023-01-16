@@ -41,11 +41,11 @@
 * chm: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できる端末モデル名
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * [JavaScript参考実装](#ClientHint)
+  * [ClientHintについて](#ClientHint)
 * chpv: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hint)によって取得できるプラットフォームバージョン(OSバージョン)
     * 参考: https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API
-  * [JavaScript参考実装](#ClientHint)
+  * [ClientHintについて](#ClientHint)
 * ref: Optional.
   * Web面配信の場合、広告掲載ページのURL
 * lang: Optional.
@@ -67,6 +67,10 @@ if(navigator.userAgentData){
 参考: [API Reference](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
 
 注: ES6対応ブラウザでの動作が必要です
+
+HTTPヘッダーによるClientHintの取得も可能です
+
+参考: [HTTP Client Hint](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints)
 
 #### iOS14以降のアプリ面配信の場合
 
