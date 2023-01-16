@@ -59,9 +59,9 @@
 JavaScriptのClient Hint機能を用いてモデル、プラットフォームバージョンを取得する例
 ```javascript
 if(navigator.userAgentData){
-      navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
-            //取得したUA情報の処理
-      });
+  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+    //取得したUA情報の処理
+  });
 }
 ```
 注: ES6対応ブラウザでの動作が必要です
