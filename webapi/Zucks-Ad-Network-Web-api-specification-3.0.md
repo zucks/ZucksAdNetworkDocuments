@@ -64,6 +64,8 @@ if(navigator.userAgentData){
   });
 }
 ```
+参考: [API Reference](https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData/getHighEntropyValues)
+
 注: ES6対応ブラウザでの動作が必要です
 
 #### iOS14以降のアプリ面配信の場合
