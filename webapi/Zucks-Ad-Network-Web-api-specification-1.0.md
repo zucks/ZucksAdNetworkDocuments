@@ -30,9 +30,28 @@
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1
 * ua: String, Optional.
+* chm: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
+  * [Client Hintsの取得](#Client-Hintsの取得)
+* chpv: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
+  * [Client Hintsの取得](#Client-Hintsの取得)
 * ref: String, Optional.
 * lang: Optional.
 * ip: Source IP address, Optional
+
+#### Client Hintsの取得
+[UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
+```javascript
+if(navigator.userAgentData){
+  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+    //取得したUA情報の処理
+  });
+}
+```
+参考: [API Reference](https://developer.mozilla.org/ja/docs/Web/API/NavigatorUAData/getHighEntropyValues)
+
+[HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
 
 ### その他
 
