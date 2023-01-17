@@ -37,10 +37,29 @@
   * APIへのリクエストをサーバから発行する場合など、広告を表示する端末のIPアドレスを設定してください
 * `ua` : Optional.
   * Headerと異なるUser-Agentを利用する場合に設定してください
+* chm: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
+  * [Client Hintsの取得](#Client-Hintsの取得)
+* chpv: String, Optional.
+  * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
+  * [Client Hintsの取得](#Client-Hintsの取得)
 * `ref` : Optional.
   * Headerと異なるRefererを利用する場合に設定してください
 * `lang` : Optional.
   * Headerと異なるAccept-Languageを利用する場合に設定してください
+
+#### Client Hintsの取得
+[UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
+```javascript
+if(navigator.userAgentData){
+  navigator.userAgentData.getHighEntropyValues(["model", "platformVersion"]).then((uaData) => {
+    //取得したUA情報の処理
+  });
+}
+```
+参考: [API Reference](https://developer.mozilla.org/ja/docs/Web/API/NavigatorUAData/getHighEntropyValues)
+
+[HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
 
 ### その他
 
