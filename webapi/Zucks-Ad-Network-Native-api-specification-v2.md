@@ -37,10 +37,10 @@
   * APIへのリクエストをサーバから発行する場合など、広告を表示する端末のIPアドレスを設定してください
 * `ua` : Optional.
   * Headerと異なるUser-Agentを利用する場合に設定してください
-* chm: String, Optional.
+* `chm`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
   * [Client Hintsの取得](#Client-Hintsの取得)
-* chpv: String, Optional.
+* `chpv`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
   * [Client Hintsの取得](#Client-Hintsの取得)
 * `ref` : Optional.
@@ -130,7 +130,7 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 ### Request
 
 ```
-https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ip=1.66.96.0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2010_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F602.1.50%20%28KHTML%2C%20like%20Gecko%29%20Version%2F10.0%20Mobile%2F14A345%20Safari%2F602.1&ref=http%3A%2F%2Fexample.com&lang=ja
+https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ip=1.66.96.0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2010_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F602.1.50%20%28KHTML%2C%20like%20Gecko%29%20Version%2F10.0%20Mobile%2F14A345%20Safari%2F602.1&chm=Pixel%205&chpv=11&ref=http%3A%2F%2Fexample.com&lang=ja
 ```
 
 ### Response
