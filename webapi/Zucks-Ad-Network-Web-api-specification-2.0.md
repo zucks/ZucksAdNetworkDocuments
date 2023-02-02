@@ -8,41 +8,41 @@
 
 ### Request Headers:
 
-* User-Agent: String, Required.
+* `User-Agent`: String, Required.
   * デフォルトブラウザと同等のものを送信してください
   * 末尾に独自の付加情報が追加されていても、許容されます
   * Parameter `ua` が設定されている場合、Parameter側の設定が優先されます
   * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告案件は配信されません
-* Referer: Optional.
+* `Referer`: Optional.
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
-* Accept-Language: Optional.
+* `Accept-Language`: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
-* Origin: Optional.
+* `Origin`: Optional.
   * `withCredentials` 属性を `true` にてリクエストする場合は設定してください
-* Cookie: Optional.
+* `Cookie`: Optional.
 
 ### Request Parameters:
 
-* frameid: String, Requierd.
+* `frameid`: String, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は配信されません
-* ida: String, Optional.
+* `ida`: String, Optional.
   * IDFA(iOS) or Advertising ID(Android)
   * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
-* lat: 0 or 1, Optional.
+* `lat`: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1
-* ua: String, Optional.
+* `ua`: String, Optional.
   * 付加されていないまたは標準のものと大きく異なる場合、HTTP Status `406 Not Acceptable` を返し、広告は配信されません
-* chm: String, Optional.
+* `chm`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
   * [Client Hintsの取得](#Client-Hintsの取得)
-* chpv: String, Optional.
+* `chpv`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
   * [Client Hintsの取得](#Client-Hintsの取得)
-* ref: String, Optional.
-* lang: Optional.
-* ip: String, Optional.
+* `ref`: String, Optional.
+* `lang`: Optional.
+* `ip`: String, Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
 
@@ -111,7 +111,7 @@ Response Bodyはありません。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234
+http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234&chm=Pixel%205&chpv=11
 ```
 
 ### Response

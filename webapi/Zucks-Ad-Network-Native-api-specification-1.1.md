@@ -10,40 +10,40 @@
 * Method: GET
 
 ### Request Headers:
-* User-Agent: String, Required.
+* `User-Agent`: String, Required.
   * デフォルトブラウザと同等のものをHeader、もしくは後述のParameter `ua` で必ず送信してください
   * 末尾に独自の付加情報が追加されていても、許容されます
   * Parameter `ua` が設定されている場合、Parameter側の設定が優先されます
-* Referer: Optional.
+* `Referer`: Optional.
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
-* Accept-Language: Optional.
+* `Accept-Language`: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
-* Origin: Optional.
+* `Origin`: Optional.
   * `withCredentials` 属性を `true` にてリクエストする場合は設定してください
-* Cookie: Optional.
+* `Cookie`: Optional.
 
 ### Request Parameters:
-* frameid: String, Requierd.
+* `frameid`: String, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
-* ida: String, Optional.
+* `ida`: String, Optional.
   * IDFA(iOS) or Advertising ID(Android)
   * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
-* lat: 0 or 1, Optional.
+* `lat`: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1
-* ua: String, Optional.
+* `ua`: String, Optional.
   * Headerと異なるUser-Agentを利用する場合に設定してください
-* chm: String, Optional.
+* `chm`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
   * [Client Hintsの取得](#Client-Hintsの取得)
-* chpv: String, Optional.
+* `chpv`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
   * [Client Hintsの取得](#Client-Hintsの取得)
-* ref: String, Optional.
+* `ref`: String, Optional.
   * Headerと異なるRefererを利用する場合に設定してください
-* lang: Optional.
+* `lang`: Optional.
   * Headerと異なるAccept-Languageを利用する場合に設定してください
-* ip: Source IP address, Optional.
+* `ip`: Source IP address, Optional.
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -103,7 +103,7 @@ Zucks Ad Serverから、JSON文字列を返します。
 ### Request
 
 ```
-https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&chm=Pixel%205&chpv=11&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
 ```
 
 ### Response

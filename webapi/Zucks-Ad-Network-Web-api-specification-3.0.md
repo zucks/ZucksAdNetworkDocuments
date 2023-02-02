@@ -9,15 +9,15 @@
 
 ### Request Headers
 
-* User-Agent: Required.
+* `User-Agent`: Required.
   * デフォルトブラウザと同等のものを送信してください
   * 末尾に独自の付加情報が追加されていても、許容されます
   * Parameter `ua` が設定されている場合、Parameter側の設定が優先されます
-* Referer: Optional.
+* `Referer`: Optional.
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
-* Accept-Language: Optional.
+* `Accept-Language`: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
-* Cookie: Optional.
+* `Cookie`: Optional.
   * ブラウザ/WebView内から直接リクエストを送る場合、Cookie情報も付与するようにリクエストしてください
     * Fetch API: `credentials` オプションを `include` に設定
     * XMLHttpRequest: `withCredentials` プロパティを `true` に設定
@@ -25,31 +25,31 @@
 
 ### Request Parameters
 
-* frameid: Requierd.
+* `frameid`: Requierd.
   * 管理画面より作成いただいた広告枠ID
   * 間違った値を指定した場合、HTTP Status `400 Bad Request` を返し、広告は返却されません
-* ida: Optional.
+* `ida`: Optional.
   * IDFA(iOS) or Advertising ID(Android)
   * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
-* lat: 0 or 1, Optional.
+* `lat`: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1
   * iOS14以降では不要となります。代わりに後述のattsパラメータを送信してください。
-* ua: String, Optional.
+* `ua`: String, Optional.
   * デフォルトブラウザと同等のUserAgent文字列
   * 末尾に独自の付加情報が追加されていても、許容されます
-* chm: String, Optional.
+* `chm`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
   * [Client Hintsの取得](#Client-Hintsの取得)
-* chpv: String, Optional.
+* `chpv`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
   * [Client Hintsの取得](#Client-Hintsの取得)
-* ref: Optional.
+* `ref`: Optional.
   * Web面配信の場合、広告掲載ページのURL
-* lang: Optional.
+* `lang`: Optional.
   * 端末の言語設定
   * 例 : `ja`
-* ip: Optional.
+* `ip`: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
 
@@ -192,13 +192,13 @@ Response Bodyはありません。
 ### Request
 
 ```
-https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234
+https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&chm=Pixel%205&chpv=11
 ```
 
 SKAdNetwork計測に対応している場合
 
 ```
-https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
+https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&chm=Pixel%205&chpv=11&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
 ```
 
 ### Response

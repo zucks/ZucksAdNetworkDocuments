@@ -8,37 +8,37 @@
 * Method: GET
 
 ### Request Headers:
-* User-Agent: String, Required.
+* `User-Agent`: String, Required.
   * デフォルトブラウザと同等のものを送信してください
   * 末尾に独自の付加情報が追加されていても、許容されます
   * Parameter `ua` が設定されている場合、Parameter側の設定が優先されます
-* Referer: Optional.
+* `Referer`: Optional.
   * Parameter `ref` が設定されている場合、Parameter側の設定が優先されます
-* Accept-Language: Optional.
+* `Accept-Language`: Optional.
   * Parameter `lang` が設定されている場合、Parameter側の設定が優先されます
-* Origin: Optional.
+* `Origin`: Optional.
   * `withCredentials` 属性を `true` にてリクエストする場合は設定してください
-* Cookie: Optional.
+* `Cookie`: Optional.
 
 ### Request Parameters:
-* frameid: Integer, Requierd.
+* `frameid`: Integer, Requierd.
   * 枠ID. Zucks Ad Network担当者にご確認ください.
-* ida: String, Optional.
+* `ida`: String, Optional.
   * IDFA(iOS) or Advertising ID(Android)
   * Parameter `ida` を送信する場合、iOS13以前やAndroidでは後述のParameter `lat` も送信してください
-* lat: 0 or 1, Optional.
+* `lat`: 0 or 1, Optional.
   * 「広告トラッキング制限」が無効な場合: 0
   * 「広告トラッキング制限」が有効な場合: 1
-* ua: String, Optional.
-* chm: String, Optional.
+* `ua`: String, Optional.
+* `chm`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できる端末モデル名
   * [Client Hintsの取得](#Client-Hintsの取得)
-* chpv: String, Optional.
+* `chpv`: String, Optional.
   * ブラウザのユーザエージェントクライアントヒントAPI機能(以下, Client Hints)によって取得できるプラットフォームバージョン(OSバージョン)
   * [Client Hintsの取得](#Client-Hintsの取得)
-* ref: String, Optional.
-* lang: Optional.
-* ip: Source IP address, Optional
+* `ref`: String, Optional.
+* `lang`: Optional.
+* `ip`: Source IP address, Optional
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -102,7 +102,7 @@ HTML広告のときに返されます:
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&
+http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&chm=Pixel%205&chpv=11
 ```
 
 ### Response
