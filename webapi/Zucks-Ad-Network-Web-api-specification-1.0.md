@@ -102,7 +102,7 @@ HTML広告のときに返されます:
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&chm=Pixel%205&chpv=11
+http://sh.zucks.net/opt/api/v1?frameid=723&ida=xxxx-xxxx-xxxx-xxxx-xxxx&chm=Pixel%205&chpv=11.0.0
 ```
 
 ### Response

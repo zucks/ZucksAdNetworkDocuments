@@ -198,7 +198,7 @@ https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&chm=Pixel%205&chpv=11
 SKAdNetwork計測に対応している場合
 
 ```
-https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&chm=Pixel%205&chpv=11&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
+https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&chm=Pixel%205&chpv=11.0.0&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
 ```
 
 ### Response

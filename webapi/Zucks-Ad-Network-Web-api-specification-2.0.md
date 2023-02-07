@@ -111,7 +111,7 @@ Response Bodyはありません。
 ### Request
 
 ```
-http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234&chm=Pixel%205&chpv=11
+http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234&chm=Pixel%205&chpv=11.0.0
 ```
 
 ### Response
