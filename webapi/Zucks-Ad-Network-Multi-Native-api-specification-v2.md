@@ -135,9 +135,14 @@ JSON文字列を返却します。文字コードはUTF-8となります。
 ## Example
 
 ### Request
-
+iOS
 ```
 https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&chm=Pixel%205&chpv=11.0.0&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+```
+
+Android
+```
+https://sh.zucks.net/opt/native/api/v2m?frameid=_xxxxxxxxxx&num=2ida=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lat=0&ua=Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36&chm=Pixel%205&chpv=11.0.0&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
 ```
 
 ### Response

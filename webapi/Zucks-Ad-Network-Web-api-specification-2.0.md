@@ -109,9 +109,14 @@ Response Bodyはありません。
 ## Example
 
 ### Request
-
+iOS
 ```
-http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234&chm=Pixel%205&chpv=11.0.0
+http://sh.zucks.net/opt/api/v2?frameid=_abcdef1234
+```
+
+Android
+```
+https://sh.zucks.net/opt/api/v2?frameid=_abcdef1234&ida=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lat=0&ip=0.0.0.0&ua=Mozilla/5.0 (Linux; Android 11; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.91 Mobile Safari/537.36&chm=Pixel%205&chpv=11.0.0&ref=http://example.com&lang=ja
 ```
 
 ### Response
