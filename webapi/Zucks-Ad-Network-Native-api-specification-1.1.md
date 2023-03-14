@@ -101,9 +101,13 @@ Zucks Ad Serverから、JSON文字列を返します。
 ## Example
 
 ### Request
-
+iOS
 ```
-https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&chm=Pixel%205&chpv=11&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+```
+Android
+```
+https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lat=0&ua=Mozilla%2F5.0%20%28Linux%3B%20Android%2011%3B%20Pixel%205%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F90.0.4430.91%20Mobile%20Safari%2F537.36&chm=Pixel%205&chpv=11.0.0&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
 ```
 
 ### Response
