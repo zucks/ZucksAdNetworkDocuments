@@ -135,7 +135,7 @@ https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xx
 
 Android
 ```
-https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lat=0&ip=0.0.0.0&ua=Mozilla%2F5.0%20%28Linux%3B%20Android%2011%3B%20Pixel%205%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F90.0.4430.91%20Mobile%20Safari%2F537.36%0D%0A&chm=Pixel%205&chpv=11.0.0&ref=http://example.com&lang=ja
+https://sh.zucks.net/opt/native/api/v2?frameid=_xxxxxxxxxx&ida=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&lat=0&ip=0.0.0.0&ua=Mozilla%2F5.0%20%28Linux%3B%20Android%2011%3B%20Pixel%205%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome%2F90.0.4430.91%20Mobile%20Safari%2F537.36&chm=Pixel%205&chpv=11.0.0&ref=http://example.com&lang=ja
 ```
 
 ### Response
