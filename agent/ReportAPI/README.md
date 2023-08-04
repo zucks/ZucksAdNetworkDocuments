@@ -1,6 +1,6 @@
 # Zucks Ad Network 代理店様向けレポートAPI仕様書 v9.0
 
-リリース日: 2023/07/28
+リリース日: 2023/08/10
 
 ### 概要
 
@@ -26,7 +26,7 @@ https://ms.zucksadnetwork.com/web_api/agent/report/v9?date={date}
 
 | GETパラメータ | 値 | 
 | --- | --- |
-| date | YYYY-MM-DDで表されたレポート日付 (例: "2023-07-28") |
+| date | YYYY-MM-DDで表されたレポート日付 (例: "2023-08-10") |
 
 #### HTTPメソッド
 
@@ -43,7 +43,7 @@ GET
 下記はcurlコマンドを用いる場合です。
 
 ``` sh
-$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v9?date=2020-11-20'
+$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v9?date=2023-08-10'
 ```
 
 ### レスポンス
@@ -95,8 +95,8 @@ UTF-8
 #### レスポンス例
 
 ```
-$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v8?date=2020-11-20'
-"2020-11-20","6407.00","6179","527","204","12","12.16","1","【TEST】テストオーダーグループ","1","【TEST】テストオーダー","【TEST】テスト広告主","1","【TEST】テストキャンペーン","1","【TEST】テストクリエイティブ","https://zucks.co.jp/","1","---","","","---","320×50"
+$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v9?date=2023-08-10'
+2023-08-10,704179.52,1449872,34065,221,20.67,1,【テスト】オーダーグループ,1,【TEST】テストオーダー,広告主,1,テストキャンペーン,1,クリエイティブ,http://zucks.co.jp/...,,,---,"320,48"
 ```
 
 ### FAQ
@@ -105,7 +105,7 @@ $ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/w
 
 対象日のレポートは、翌日午前4時頃までに集計が行われます。
 
-* 2023-07-28のレポート => 2023-07-29 午前4時 集計完了
+* 2023/08/10のレポート => 2023/08/11 午前4時 集計完了
 
 ##### 集計が終わっているはずなのに、204が返却される
 
