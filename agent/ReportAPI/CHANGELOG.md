@@ -2,14 +2,13 @@
 
 ## v9
 
-リリース日 : 2023/07/28
+リリース日 : 2023/08/08
 
 * エンドポイントの変更
     * v8: https://ms.zucksadnetwork.com/web_api/agent/report/v8
     * v9: https://ms.zucksadnetwork.com/web_api/agent/report/v9
 * 以下の項目が`5: CV数`項目に統合されました
-    * `v8 → 5: CV数`
-    * `v8 → 6: VTCV数`
+    * v8 `5: CV数` , `6: VTCV数`
 
 ## [v8](./archives/v8/)
 
