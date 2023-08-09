@@ -1,12 +1,12 @@
-# Zucks Ad Network 代理店様向けレポートAPI仕様書 v9.0
+# Zucks Ad Network 代理店様向けレポートAPI仕様書 v8.0
 
-リリース日: 2023/08/08
+リリース日: 2020/11/20
 
 ### 概要
 
 Zucks Ad Networkのレポートを日単位で取得するAPIです。  
 
-過去の更新履歴は[CHANGELOG](./CHANGELOG.md)をご確認ください。
+**こちらは過去のバージョンになります。最新版は[こちら](../../)からご確認ください。**
 
 
 # レポートAPI仕様
@@ -21,12 +21,12 @@ API認証トークンの発行・再発行は弊社担当までご連絡くだ�
 #### URL
 
 ```
-https://ms.zucksadnetwork.com/web_api/agent/report/v9?date={date}
+https://ms.zucksadnetwork.com/web_api/agent/report/v8?date={date}
 ```
 
 | GETパラメータ | 値 | 
 | --- | --- |
-| date | YYYY-MM-DDで表されたレポート日付 (例: "2023-08-08") |
+| date | YYYY-MM-DDで表されたレポート日付 (例: "2020-11-20") |
 
 #### HTTPメソッド
 
@@ -43,7 +43,7 @@ GET
 下記はcurlコマンドを用いる場合です。
 
 ``` sh
-$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v9?date=2023-08-08'
+$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v8?date=2020-11-20'
 ```
 
 ### レスポンス
@@ -74,29 +74,30 @@ UTF-8
 | 3 | integer | imp数 | |
 | 4 | integer | click数 | |
 | 5 | integer | CV数 | |
-| 6 | decimal | CPC単価 | |
-| 7 | string | オーダーグループID | |
-| 8 | string | オーダーグループ名 | |
-| 9 | string | オーダーID | |
-| 10 | string | オーダー名 | |
-| 11 | string | 広告主様 | |
-| 12 | string | キャンペーンID | |
-| 13 | string | キャンペーン名 | |
-| 14 | string | クリエイティブID | |
-| 15 | string | クリエイティブ名 | |
-| 16 | string | 入稿URL | |
-| 17 | integer | クリエイティブタイプ | 1:画像、 2:第三者配信、 4:ネイティブ |
-| 18 | string | クリエイティブ画像のURL | |
-| 19 | string | ネイティブのタイトル | クリエイティブタイプが4以外は空文字 |
-| 20 | string | ネイティブのテキスト | クリエイティブタイプが4以外は空文字 |
-| 21 | string | 配信OS | iOS、 Android、 --- |
-| 22 | string | 広告サイズ | 320×50 の形式 |
+| 6 | integer | VTCV数 | |
+| 7 | decimal | CPC単価 | |
+| 8 | string | オーダーグループID | |
+| 9 | string | オーダーグループ名 | |
+| 10 | string | オーダーID | |
+| 11 | string | オーダー名 | |
+| 12 | string | 広告主様 | |
+| 13 | string | キャンペーンID | |
+| 14 | string | キャンペーン名 | |
+| 15 | string | クリエイティブID | |
+| 16 | string | クリエイティブ名 | |
+| 17 | string | 入稿URL | |
+| 18 | integer | クリエイティブタイプ | 1:画像、 2:第三者配信、 4:ネイティブ |
+| 19 | string | クリエイティブ画像のURL | |
+| 20 | string | ネイティブのタイトル | クリエイティブタイプが4以外は空文字 |
+| 21 | string | ネイティブのテキスト | クリエイティブタイプが4以外は空文字 |
+| 22 | string | 配信OS | iOS、 Android、 --- |
+| 23 | string | 広告サイズ | 320×50 の形式 |
 
 #### レスポンス例
 
 ```
-$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v9?date=2023-08-08'
-2023-08-08,704179.52,1449872,34065,221,20.67,1,【テスト】オーダーグループ,1,【TEST】テストオーダー,広告主,1,テストキャンペーン,1,クリエイティブ,http://zucks.co.jp/...,,,---,"320,48"
+$ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/web_api/agent/report/v8?date=2020-11-20'
+"2020-11-20","6407.00","6179","527","204","12","12.16","1","【TEST】テストオーダーグループ","1","【TEST】テストオーダー","【TEST】テスト広告主","1","【TEST】テストキャンペーン","1","【TEST】テストクリエイティブ","https://zucks.co.jp/","1","---","","","---","320×50"
 ```
 
 ### FAQ
@@ -105,7 +106,7 @@ $ curl -H 'x-api-key:abcdef12-3456-....' -X GET 'https://ms.zucksadnetwork.com/w
 
 対象日のレポートは、翌日午前4時頃までに集計が行われます。
 
-* 2023/08/08のレポート => 2023/08/09 午前4時 集計完了
+* 2020-11-20のレポート => 2020-11-21 午前4時 集計完了
 
 ##### 集計が終わっているはずなのに、204が返却される
 
