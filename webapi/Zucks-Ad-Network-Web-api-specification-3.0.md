@@ -52,6 +52,10 @@
 * `ip`: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
+*  `req_app_id`: 1, Optional
+  * アプリIDを取得可能な広告のみ返却する場合: 1
+  * 1を指定し、アプリIDを取得可能な広告の候補がない場合、no_adが返却されます
+  * アプリIDの取得については、[Response Body](#response-body)の項目を参照してください
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -113,6 +117,14 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * `img` / `html`
 * skadn: Object. (Optional)
   * SKAdNetwork計測に対応した広告配信に必要な情報
+* store: String.
+  * アプリストア種別
+  * `apple`
+  * 注: Androidアプリのストア種別取得には未対応です 
+* app_id: String.
+  * 広告主アプリID
+  * storeが`apple`の場合...例:`id727497959`
+  * 注: AndroidアプリID取得には未対応です 
 
 #### type: img
 
