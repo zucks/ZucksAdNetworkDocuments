@@ -52,7 +52,7 @@
 * `ip`: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
-*  `req_app_id`: 1, Optional
+* `req_app_id`: 1, Optional
   * アプリIDを取得可能な広告のみ返却する場合: 1
   * 1を指定し、アプリIDを取得可能な広告の候補がない場合、no_adが返却されます
   * アプリIDの取得については、[Response Body](#response-body)の項目を参照してください
