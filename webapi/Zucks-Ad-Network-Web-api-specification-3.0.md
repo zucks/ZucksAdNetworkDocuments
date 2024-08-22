@@ -119,7 +119,7 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * SKAdNetwork計測に対応した広告配信に必要な情報
 * store: String.
   * アプリストア種別
-  * `apple`, 空文字
+  * `apple` / 空文字
   * 注: Androidアプリのストア種別取得には未対応です 
   * 注: 一部のアプリでは取得できない場合があります. 
 * app_id: String.
