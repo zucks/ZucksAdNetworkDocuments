@@ -117,17 +117,16 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * `img` / `html`
 * skadn: Object. (Optional)
   * SKAdNetwork計測に対応した広告配信に必要な情報
-* store: String.
+* store: String, Optional.
   * アプリストア種別
-  * `apple` / 空文字
+  * `apple`
+  * storeを取得できない場合はこの項目は返却されません
   * 注: Androidアプリのストア種別取得には未対応です 
-  * 注: 一部のアプリでは取得できない場合があります. 
-* app_id: String.
-  * 広告主アプリID
+* app_id: String, Optional
+  * 広告アプリID
   * storeが`apple`の場合...例:`id727497959`
-  * storeを取得できない場合...空文字
+  * storeを取得できない場合はこの項目は返却されません
   * 注: AndroidアプリID取得には未対応です 
-  * 注: 一部のアプリでは取得できない場合があります. 
 
 #### type: img
 
