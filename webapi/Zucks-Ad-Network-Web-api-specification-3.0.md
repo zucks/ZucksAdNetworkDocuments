@@ -52,10 +52,9 @@
 * `ip`: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
-* `require_has_app_store_info_ad`: 1, Optional
-  * レスポンスで`app_store`および`app_id`が返却可能な広告のみ返却する場合: 1
-  * 1を指定し、`app_store`および`app_id`を取得可能な広告の候補がない場合、no_adが返却されます
-  * アプリIDの取得については、[Response Body](#response-body)の項目を参照してください
+* `require_app_store`: 1, Optional
+  * レスポンスで[AppStore](#appstore-object)が返却可能な広告のみ返却する場合: 1
+  * 1を指定し、[AppStore](#appstore-object)を取得可能な広告の候補がない場合、no_adが返却されます
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
