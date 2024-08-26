@@ -196,8 +196,6 @@ iOS14以降でSKAdNetwork計測に対応した広告の場合に返却される�
   * 広告アプリID
   * app_storeが`apple`の場合...例:`727497959`
 
-
-
 ## Response: 広告在庫がない場合
 
 ### Response Header
