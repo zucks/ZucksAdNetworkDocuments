@@ -117,18 +117,11 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * `img` / `html`
 * skadn: Object. (Optional)
   * SKAdNetwork計測に対応した広告配信に必要な情報
-* app_store: String, Optional.
-  * アプリストア種別
-  * `apple`
+# app_store: Object. (Optional)
+  * アプリストア情報
+  * 詳細: [App Store Object](#appstore-object) 
   * アプリ案件でも一部の一部の広告では返却されない場合があります
     * 取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `only_has_app_store_info_ad` を設定してください
-  * 注: Androidアプリのストア種別取得には未対応です 
-* app_id: String, Optional
-  * 広告アプリID
-  * app_storeが`apple`の場合...例:`727497959`
-  * アプリ案件でも一部の一部の広告では返却されない場合があります
-    * 取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `only_has_app_store_info_ad` を設定してください
-  * 注: AndroidアプリID取得には未対応です 
 
 #### type: img
 
@@ -193,6 +186,18 @@ iOS14以降でSKAdNetwork計測に対応した広告の場合に返却される�
   * 署名文字列
 * timestamp: Integer
   * タイムスタンプ（ミリ秒）
+
+#### AppStore Object
+* store: String
+  * アプリストア種別
+  * `apple`
+  * 注: Androidアプリのストア種別取得には未対応です 
+* id: String
+  * 広告アプリID
+  * app_storeが`apple`の場合...例:`727497959`
+  * 注: AndroidアプリID取得には未対応です 
+
+
 
 ## Response: 広告在庫がない場合
 
