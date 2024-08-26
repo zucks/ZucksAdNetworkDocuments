@@ -117,7 +117,7 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * `img` / `html`
 * skadn: Object. (Optional)
   * SKAdNetwork計測に対応した広告配信に必要な情報
-* store: String, Optional.
+* app_store: String, Optional.
   * アプリストア種別
   * `apple`
   * storeを取得できない場合はこの項目は返却されません
