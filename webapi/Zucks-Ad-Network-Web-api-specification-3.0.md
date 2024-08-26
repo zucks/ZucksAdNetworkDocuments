@@ -121,11 +121,13 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * アプリストア種別
   * `apple`
   * アプリ案件でも一部の一部の広告では返却されない場合があります
+    * 取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `only_has_app_store_info_ad` を設定してください
   * 注: Androidアプリのストア種別取得には未対応です 
 * app_id: String, Optional
   * 広告アプリID
   * app_storeが`apple`の場合...例:`727497959`
   * アプリ案件でも一部の一部の広告では返却されない場合があります
+    * 取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `only_has_app_store_info_ad` を設定してください
   * 注: AndroidアプリID取得には未対応です 
 
 #### type: img
