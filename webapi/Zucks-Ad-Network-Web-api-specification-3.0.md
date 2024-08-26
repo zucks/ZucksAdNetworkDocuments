@@ -52,7 +52,7 @@
 * `ip`: Optional.
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
-* `req_app_id`: 1, Optional
+* `only_has_app_store_info_ad`: 1, Optional
   * アプリIDを取得可能な広告のみ返却する場合: 1
   * 1を指定し、アプリIDを取得可能な広告の候補がない場合、no_adが返却されます
   * アプリIDの取得については、[Response Body](#response-body)の項目を参照してください
@@ -120,12 +120,12 @@ Zucks Ad Serverから、JSON文字列を返却します。
 * app_store: String, Optional.
   * アプリストア種別
   * `apple`
-  * storeを取得できない場合はこの項目は返却されません
+  * アプリ案件でも一部の一部の広告では返却されない場合があります
   * 注: Androidアプリのストア種別取得には未対応です 
 * app_id: String, Optional
   * 広告アプリID
-  * storeが`apple`の場合...例:`id727497959`
-  * storeを取得できない場合はこの項目は返却されません
+  * app_storeが`apple`の場合...例:`727497959`
+  * アプリ案件でも一部の一部の広告では返却されない場合があります
   * 注: AndroidアプリID取得には未対応です 
 
 #### type: img
