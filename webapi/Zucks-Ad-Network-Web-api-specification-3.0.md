@@ -53,8 +53,8 @@
   * Source IP address
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
 * `require_app_store`: 1, Optional
-  * レスポンスで[AppStore](#appstore-object)が返却可能な広告のみ返却する場合: 1
-  * 1を指定し、[AppStore](#appstore-object)を取得可能な広告の候補がない場合、no_adが返却されます
+  * レスポンスでapp_storeパラメータを取得可能な広告のみ返却する場合: 1
+  * app_storeを取得可能な広告の候補がない場合、no_adが返却されます
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -116,11 +116,11 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * `img` / `html`
 * skadn: Object. (Optional)
   * SKAdNetwork計測に対応した広告配信に必要な情報
-# app_store: Object. (Optional)
+* app_store: Object. (Optional)
   * アプリストア情報
   * 詳細: [App Store Object](#appstore-object) 
   * アプリ案件でも一部の一部の広告では返却されない場合があります
-    * 取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `only_has_app_store_info_ad` を設定してください
+    * app_storeオブジェクトを取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `require_app_store` を設定してください
 
 #### type: img
 
