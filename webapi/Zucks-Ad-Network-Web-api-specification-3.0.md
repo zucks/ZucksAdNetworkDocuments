@@ -120,7 +120,7 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * アプリストア情報
   * 詳細: [App Store Object](#app-store-object) 
   * アプリ案件でも一部の広告では返却されない場合があります
-    * app_storeオブジェクトを取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `require_app_store` を設定してください
+    * App Storeオブジェクトを取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `require_app_store` を設定してください
 
 #### type: img
 
