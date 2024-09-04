@@ -187,7 +187,8 @@ iOS14以降でSKAdNetwork計測に対応した広告の場合に返却される�
   * タイムスタンプ（ミリ秒）
 
 #### AppStore Object
-* 注: Androidアプリのストア種別取得には未対応です 
+注: Androidアプリのストア種別取得には未対応です 
+
 * store: String
   * アプリストア種別
   * `apple`
