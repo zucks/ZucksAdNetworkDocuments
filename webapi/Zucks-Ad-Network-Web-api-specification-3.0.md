@@ -118,7 +118,7 @@ Zucks Ad Serverから、JSON文字列を返却します。
   * SKAdNetwork計測に対応した広告配信に必要な情報
 * app_store: Object. (Optional)
   * アプリストア情報
-  * 詳細: [App Store Object](#appstore-object) 
+  * 詳細: [App Store Object](#app-store-object) 
   * アプリ案件でも一部の広告では返却されない場合があります
     * app_storeオブジェクトを取得可能な広告のみを返却する場合は、[Request Parameter](#request-parameters)の `require_app_store` を設定してください
 
