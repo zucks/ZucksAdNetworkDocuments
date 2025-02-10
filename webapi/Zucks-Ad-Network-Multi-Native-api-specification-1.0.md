@@ -1,7 +1,8 @@
 # Zucks Ad Network Multi Native Ad API v1.0 Specification
 
-**こちらは旧バージョンのAPIとなります。**  
-**新しいバージョンの [Multi Native Ad API（v2）](Zucks-Ad-Network-Multi-Native-api-specification-v2.md) を公開しております。**
+> [!IMPORTANT]
+> こちらのAPIは提供終了しております。
+> 新しいバージョンの [Multi Native Ad API（v2）](Zucks-Ad-Network-Multi-Native-api-specification-v2.md) をご利用ください。
 
 ネイティブ広告を複数件返却するAPIの仕様書となります
 
