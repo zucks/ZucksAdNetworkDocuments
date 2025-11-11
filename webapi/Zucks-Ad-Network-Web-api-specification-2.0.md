@@ -47,7 +47,7 @@
   * APIへのリクエストをサーバから発行する場合には、広告を表示する端末のIPアドレスを設定してください
 * `over` : Optional.
   * OSバージョン
-  * [OSバージョンの取得](#osバージョンの取得)
+  * [OSバージョンの取得](#OSバージョンの取得)
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例

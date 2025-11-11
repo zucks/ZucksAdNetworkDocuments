@@ -55,7 +55,7 @@
   * Headerと異なるAccept-Languageを利用する場合に設定してください
 * `over` : Optional.
   * OSバージョン
-  * [OSバージョンの取得](#osバージョンの取得)
+  * [OSバージョンの取得](#OSバージョンの取得)
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
