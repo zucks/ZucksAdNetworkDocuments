@@ -57,7 +57,7 @@
 * `lang` : Optional.
   * Headerと異なるAccept-Languageを利用する場合に設定してください
 * `over` : Optional.
-  * WKWebViewのsystemVersionによって取得できるOSバージョン
+  * OSバージョン
   * [OSバージョンの取得](#osバージョンの取得)
 
 #### Client Hintsの取得
@@ -75,14 +75,15 @@ if(navigator.userAgentData){
 
 #### OSバージョンの取得
 
-iOSのWKWebViewを使用している場合は、[systemVersion](https://developer.apple.com/documentation/uikit/uidevice/systemversion)を使用してOSバージョンを取得できます。
+iOSのWKWebViewで[systemVersion](https://developer.apple.com/documentation/uikit/uidevice/systemversion)を使用してOSバージョンを取得する例
 
 ```objective-c
-// OSバージョンを取得
+// Objective-Cの例
 NSString *osVersion = [[UIDevice currentDevice] systemVersion];
 ```
 
 ```swift
+// Swiftの例
 let osVersion = UIDevice.current.systemVersion
 ```
 
