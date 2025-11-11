@@ -44,6 +44,9 @@
 * `lang`: Optional.
   * Headerと異なるAccept-Languageを利用する場合に設定してください
 * `ip`: Source IP address, Optional.
+* `over` : Optional.
+  * OSバージョン
+  * [OSバージョンの取得](#osバージョンの取得)
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -57,6 +60,20 @@ if(navigator.userAgentData){
 参考: [API Reference](https://developer.mozilla.org/ja/docs/Web/API/NavigatorUAData/getHighEntropyValues)
 
 [HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
+
+#### OSバージョンの取得
+
+iOSのWKWebViewで[systemVersion](https://developer.apple.com/documentation/uikit/uidevice/systemversion)を使用してOSバージョンを取得する例
+
+```objective-c
+// Objective-Cの例
+NSString *osVersion = [[UIDevice currentDevice] systemVersion];
+```
+
+```swift
+// Swiftの例
+let osVersion = UIDevice.current.systemVersion
+```
 
 ### その他
 
