@@ -46,7 +46,7 @@
 * `ip`: Source IP address, Optional.
 * `over` : Optional.
   * OSバージョン
-  * 例 : 26.0.1
+  * 例 : `26.0.1`
   * [OSバージョンの取得](#OSバージョンの取得)
 
 #### Client Hintsの取得
