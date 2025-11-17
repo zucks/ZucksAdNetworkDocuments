@@ -55,6 +55,10 @@
 * `require_app_store`: 1, Optional
   * レスポンスでapp_storeパラメータを取得可能な広告のみ返却する場合: 1
   * app_storeを取得可能な広告の候補がない場合、no_adが返却されます
+* `over` : Optional.
+  * OSバージョン
+  * 例 : `26.0.1`
+  * [OSバージョンの取得](#OSバージョンの取得)
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -69,6 +73,19 @@ if(navigator.userAgentData){
 
 [HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
 
+#### OSバージョンの取得
+
+iOSのネイティブAPIで[systemVersion](https://developer.apple.com/documentation/uikit/uidevice/systemversion)を使用してOSバージョンを取得する例
+
+```objective-c
+// Objective-Cの例
+NSString *osVersion = [[UIDevice currentDevice] systemVersion];
+```
+
+```swift
+// Swiftの例
+let osVersion = UIDevice.current.systemVersion
+```
 
 #### iOS14以降のアプリ面配信の場合
 
@@ -213,7 +230,7 @@ Response Bodyはありません。
 iOS (SKAdNetwork計測に対応している場合)
 
 ```
-https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2014_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Version%2F14.0%20Mobile%2F15E148%20Safari%2F604.1&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork
+https://sh.zucks.net/opt/api/v3?frameid=_abcdef1234&ida=123e4567-e89b-12d3-a456-426655440000&atts=3&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2018_6%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Mobile%2F15E148&lang=ja&ip=0.0.0.0&skadnvers%5B%5D=2.2&skadnids%5B%5D=3qcr597p9d.skadnetwork&over=26.0.1
 ```
 
 Android

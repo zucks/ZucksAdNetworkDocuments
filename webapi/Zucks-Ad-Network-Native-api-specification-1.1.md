@@ -44,6 +44,10 @@
 * `lang`: Optional.
   * Headerと異なるAccept-Languageを利用する場合に設定してください
 * `ip`: Source IP address, Optional.
+* `over` : Optional.
+  * OSバージョン
+  * 例 : `26.0.1`
+  * [OSバージョンの取得](#OSバージョンの取得)
 
 #### Client Hintsの取得
 [UserAgent Client Hints API](https://developer.mozilla.org/ja/docs/Web/API/User-Agent_Client_Hints_API) 用いてモデル、プラットフォームバージョンを取得する例
@@ -57,6 +61,20 @@ if(navigator.userAgentData){
 参考: [API Reference](https://developer.mozilla.org/ja/docs/Web/API/NavigatorUAData/getHighEntropyValues)
 
 [HTTPヘッダー](https://developer.mozilla.org/ja/docs/Web/HTTP/Client_hints) によるClient Hintsの取得も可能です
+
+#### OSバージョンの取得
+
+iOSのネイティブAPIで[systemVersion](https://developer.apple.com/documentation/uikit/uidevice/systemversion)を使用してOSバージョンを取得する例
+
+```objective-c
+// Objective-Cの例
+NSString *osVersion = [[UIDevice currentDevice] systemVersion];
+```
+
+```swift
+// Swiftの例
+let osVersion = UIDevice.current.systemVersion
+```
 
 ### その他
 
@@ -103,7 +121,8 @@ Zucks Ad Serverから、JSON文字列を返します。
 ### Request
 iOS
 ```
-https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%209_0%20like%20Mac%20OS%20X%29%20AppleWebKit%2F601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version%2F9.0%20Mobile%2F13A344%20Safari%2F601.1&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0
+https://sh.zucks.net/opt/native/api/v1?frameid=_xxxxxxxxxx&ida=xxxx-xxxx-xxxx-xxxx-xxxx&lat=0&ua=Mozilla%2F5.0%20%28iPhone%3B%20CPU%20iPhone%20OS%2018_6%20like%20Mac%20OS%20X%29%20AppleWebKit%2F605.1.15%20%28KHTML%2C%20like%20Gecko%29%20Mobile%2F15E148
+&ref=http%3A%2F%2Fexample.com&lang=ja&ip=1.66.96.0&over=26.0.1
 ```
 Android
 ```
